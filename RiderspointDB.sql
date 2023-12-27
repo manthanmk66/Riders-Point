@@ -19,3 +19,5 @@ drop table if exists pillion_route_details;
 	create table pillion_route_details(route_id int not null unique,status_id 		int,start_point varchar(20), end_point varchar(20),travel_date 			date,description varchar(100),constraint fk_prd_rid foreign 			key(status_id) references status_pillion(status_id));
 	create table loginpillion(id int,username varchar(20),password varchar(20) ,constraint fk_rd_pass_rid foreign 			key(id) references pillion_details(pillion_id));
 
+	 insert into rider_details(rider_id,name,mobile_no,address) values(1,"rohit","9564","pune");
+	 insert into rider_details(name,mobile_no,address) values("Anshu","925564","bhopal");
