@@ -23,3 +23,5 @@ drop table if exists pillion_route_details;
 	 insert into rider_details(name,mobile_no,address) values("Anshu","925564","bhopal");
 	 insert into loginrider value(1,"rohit","rohit");
 	insert into loginrider value(2,"anshu","anshu");
+	 insert into status values(1,1,"FZ","300");
+	 
