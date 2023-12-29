@@ -24,4 +24,4 @@ drop table if exists pillion_route_details;
 	 insert into loginrider value(1,"rohit","rohit");
 	insert into loginrider value(2,"anshu","anshu");
 	 insert into status values(1,1,"FZ","300");
-	 
+	 insert into status values(2,2,"Activa","300");
