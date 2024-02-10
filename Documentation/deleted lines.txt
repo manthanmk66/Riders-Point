@@ -1,0 +1,5 @@
+--drop table if exists  loginpillion;
+--drop table if exists pillion_details;
+
+--create table pillion_details(pillion_id int primary key auto_increment,name varchar(30),mobile_no varchar(10),address varchar(100));
+--create table loginpillion(id int,username varchar(20),password varchar(20) ,constraint fk_rd_pass_rid foreign	key(id) references rp_details(rp_id) on delete cascade);

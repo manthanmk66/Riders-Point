@@ -1,6 +1,6 @@
 namespace models;
-class pilion_details{
-    public int Pillion_id{
+class rp_details{
+    public int Rp_id{
         get;set;
     }
     public string Name{
