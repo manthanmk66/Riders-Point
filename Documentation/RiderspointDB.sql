@@ -1,10 +1,10 @@
-drop table if exists rider_details;
+drop table if exists rp_details;
 drop table if exists status;
 drop table if exists route_details;
-drop table if exists pillion_details;
+--drop table if exists pillion_details;
 drop table if exists status_pillion;
 drop table if exists pillion_route_details;
-
+drop table if exists  suggestion_table;
 
 
 	
