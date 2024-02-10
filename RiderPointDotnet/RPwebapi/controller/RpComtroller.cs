@@ -3,7 +3,7 @@ public void RpController : BaseController
     [HttpGet]
     public IActionResult Getall()
     {
-
+        
     }
     [HttpPost]
     public IActionResult AddDetails()

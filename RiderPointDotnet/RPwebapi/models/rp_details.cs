@@ -12,4 +12,7 @@ class rp_details{
     public string Address{
         get;set;
     }
+    public string Alert{
+        get;set;
+    }
 }
