@@ -2,9 +2,16 @@ package com.demo.Model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Pillion_route_details {
 	private int route_id ;
-	private int status_id;
+	@OneToMany
+	@JoinColumn(name="status_id")
+	private Pillion_Status status_id;
 	private String start_point;
 	private String end_point;
 	private Date travel_date;
@@ -15,7 +22,7 @@ public class Pillion_route_details {
 	public Pillion_route_details() {
 		super();
 	}
-	public Pillion_route_details(int route_id, int status_id, String start_point, String end_point, Date travel_date,
+	public Pillion_route_details(int route_id, Pillion_Status status_id, String start_point, String end_point, Date travel_date,
 			String description) {
 		super();
 		this.route_id = route_id;
@@ -31,10 +38,10 @@ public class Pillion_route_details {
 	public void setRoute_id(int route_id) {
 		this.route_id = route_id;
 	}
-	public int getStatus_id() {
+	public Pillion_Status getStatus_id() {
 		return status_id;
 	}
-	public void setStatus_id(int status_id) {
+	public void setStatus_id(Pillion_Status status_id) {
 		this.status_id = status_id;
 	}
 	public String getStart_point() {

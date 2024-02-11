@@ -1,8 +1,17 @@
 package com.demo.Model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Rider_Status {
+	@Id
 	private int status_id;
-	private String rp_id ;
+	@OneToMany
+	@JoinColumn(name="rp_id")
+	private RpDetails rp_id ;
 	private String bike;
 	private Double expense;
 	
@@ -10,7 +19,7 @@ public class Rider_Status {
 		super();
 	}
 
-	public Rider_Status(int status_id, String rp_id, String bike, Double expense) {
+	public Rider_Status(int status_id, RpDetails rp_id, String bike, Double expense) {
 		super();
 		this.status_id = status_id;
 		this.rp_id = rp_id;
@@ -26,11 +35,11 @@ public class Rider_Status {
 		this.status_id = status_id;
 	}
 
-	public String getRp_id() {
+	public RpDetails getRp_id() {
 		return rp_id;
 	}
 
-	public void setRp_id(String rp_id) {
+	public void setRp_id(RpDetails rp_id) {
 		this.rp_id = rp_id;
 	}
 

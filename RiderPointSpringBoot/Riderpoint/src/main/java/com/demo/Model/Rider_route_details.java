@@ -3,9 +3,16 @@ package com.demo.Model;
 import java.time.LocalTime;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Rider_route_details {
 	 private int route_id ;
-	 private int status_id  ;
+	 @OneToMany
+	 @JoinColumn(name="status_id")
+	 private Rider_Status status_id  ;
 	 private String start_point; 
 	 private String end_point  ; 
 	 private Date travel_date; 
@@ -19,7 +26,7 @@ public class Rider_route_details {
 	}
 
 
-	public Rider_route_details(int route_id, int status_id, String start_point, String end_point, Date travel_date,
+	public Rider_route_details(int route_id, Rider_Status status_id, String start_point, String end_point, Date travel_date,
 			LocalTime start_time, LocalTime end_time, String description) {
 		super();
 		this.route_id = route_id;
@@ -43,12 +50,12 @@ public class Rider_route_details {
 	}
 
 
-	public int getStatus_id() {
+	public Rider_Status getStatus_id() {
 		return status_id;
 	}
 
 
-	public void setStatus_id(int status_id) {
+	public void setStatus_id(Rider_Status status_id) {
 		this.status_id = status_id;
 	}
 

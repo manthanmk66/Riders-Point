@@ -1,21 +1,27 @@
 package com.demo.Model;
 
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
+@Entity
 public class Suggestion_table {
-	 private int rp_id;
+	@OneToMany
+	@JoinColumn(name="rp_id")
+	 private RpDetails rp_id;
 	 private String suggestion;
 	public Suggestion_table() {
 		super();
 	}
-	public Suggestion_table(int rp_id, String suggestion) {
+	public Suggestion_table(RpDetails rp_id, String suggestion) {
 		super();
 		this.rp_id = rp_id;
 		this.suggestion = suggestion;
 	}
-	public int getRp_id() {
+	public RpDetails getRp_id() {
 		return rp_id;
 	}
-	public void setRp_id(int rp_id) {
+	public void setRp_id(RpDetails rp_id) {
 		this.rp_id = rp_id;
 	}
 	public String getSuggestion() {

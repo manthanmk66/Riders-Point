@@ -1,15 +1,24 @@
 package com.demo.Model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Pillion_Status {
+	@Id
 	private int status_id ;
-	private int rp_id ;
+	@OneToMany
+	@JoinColumn(name="rp_id")
+	private RpDetails rp_id ;
 	private  double avg_expense;
 	
 	
 	public Pillion_Status() {
 		super();
 	}
-	public Pillion_Status(int status_id, int rp_id, double avg_expense) {
+	public Pillion_Status(int status_id, RpDetails rp_id, double avg_expense) {
 		super();
 		this.status_id = status_id;
 		this.rp_id = rp_id;
@@ -21,10 +30,10 @@ public class Pillion_Status {
 	public void setStatus_id(int status_id) {
 		this.status_id = status_id;
 	}
-	public int getRp_id() {
+	public RpDetails getRp_id() {
 		return rp_id;
 	}
-	public void setRp_id(int rp_id) {
+	public void setRp_id(RpDetails rp_id) {
 		this.rp_id = rp_id;
 	}
 	public double getAvg_expense() {

@@ -1,7 +1,11 @@
 package com.demo.Model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class RpDetails {
-	
+		@Id
 		private int id ;
 		private String name;
 		private String mobile;

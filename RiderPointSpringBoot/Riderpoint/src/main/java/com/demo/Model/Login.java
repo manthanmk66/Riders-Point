@@ -1,22 +1,31 @@
 package com.demo.Model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Login {
-	private int id ;
+	@OneToMany
+	@JoinColumn(name="rp_id")
+	private RpDetails id ;
 	private String username;
 	private String password;
 	public Login() {
 		super();
 	}
-	public Login(int id, String username, String password) {
+	public Login(RpDetails id, String username, String password) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
 	}
-	public int getId() {
+	public RpDetails getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(RpDetails id) {
 		this.id = id;
 	}
 	public String getUsername() {
