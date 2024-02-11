@@ -11,7 +11,7 @@ const About = () => {
   return (
     <div>
       {/* <HeroSection /> */}
-      <div className="flex justify-center mt-96 mb-96 mr-60 gap-6 ml-60">
+      <div className="flex justify-center mt-96 mb-96 mr-60 gap-6 ml-60 py-16 bg-gray-800" >
         
       {/* <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-3xl px-20 py-10 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
         Choose plan
