@@ -16,9 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.demo.Model.Login;
 import com.demo.Service.LoginServise;
-import com.demo.model.Pillion_route_details;
-import com.demo.service.PillionService;
-import com.demo.service.ServiceImpl;
+
 
 @RestController
 public class LoginController {

@@ -3,13 +3,16 @@ package com.demo.Model;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Pillion_route_details {
+	@Id
 	private int route_id ;
-	@OneToMany
+	@OneToOne
 	@JoinColumn(name="status_id")
 	private Pillion_Status status_id;
 	private String start_point;

@@ -8,7 +8,9 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class Login {
-	@OneToMany
+	@Id
+	private int loginid;
+	@OneToOne
 	@JoinColumn(name="rp_id")
 	private RpDetails id ;
 	private String username;

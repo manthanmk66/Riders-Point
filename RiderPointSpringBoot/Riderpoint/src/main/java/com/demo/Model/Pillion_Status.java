@@ -4,12 +4,13 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Pillion_Status {
 	@Id
 	private int status_id ;
-	@OneToMany
+	@OneToOne
 	@JoinColumn(name="rp_id")
 	private RpDetails rp_id ;
 	private  double avg_expense;

@@ -12,7 +12,7 @@ import com.demo.Model.RpDetails;
 @Service
 public class LoginServiseImpl implements LoginServise {
 	@Autowired
-	 private dao pdao;
+	private dao pdao;
 	public List<Login> validUser(String uname, String pass) {
 		// TODO Auto-generated method stub
 		return pdao.findAll();
