@@ -15,4 +15,7 @@ class rp_details{
     public string Alert{
         get;set;
     }
+    public string Mode{
+        get;set;
+    }
 }

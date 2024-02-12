@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Final Project\\Riders-Point\\RiderPointDotnet\\RPwebapi\\RPwebapi.csproj": {}
+    "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RPwebapi\\RPwebapi.csproj": {}
   },
   "projects": {
-    "D:\\Final Project\\Riders-Point\\RiderPointDotnet\\RPwebapi\\RPwebapi.csproj": {
+    "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RPwebapi\\RPwebapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Final Project\\Riders-Point\\RiderPointDotnet\\RPwebapi\\RPwebapi.csproj",
+        "projectUniqueName": "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RPwebapi\\RPwebapi.csproj",
         "projectName": "RPwebapi",
-        "projectPath": "D:\\Final Project\\Riders-Point\\RiderPointDotnet\\RPwebapi\\RPwebapi.csproj",
-        "packagesPath": "C:\\Users\\Manthan\\.nuget\\packages\\",
-        "outputPath": "D:\\Final Project\\Riders-Point\\RiderPointDotnet\\RPwebapi\\obj\\",
+        "projectPath": "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RPwebapi\\RPwebapi.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RPwebapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Manthan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
