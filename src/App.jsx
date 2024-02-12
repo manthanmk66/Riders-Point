@@ -9,6 +9,8 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
 import Error from "./Error";
 import GoToTop from "./components/GoToTop";
+import Events from "./Events";
+import Register from "./Register";
 
 const App = () => {
   const theme = {
@@ -43,7 +45,10 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/service" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/register" element={<Register />} />
           <Route path="*" element={<Error />} />
+          
         </Routes>
 
         <Footer />

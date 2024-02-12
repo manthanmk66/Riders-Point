@@ -224,6 +224,24 @@ const Navbar = () => {
             Contact
           </NavLink>
         </li>
+        <li className="mb-4 lg:mb-0">
+          <NavLink
+            className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out"
+            onClick={() => setOpenMenu(false)}
+            to="/events"
+          >
+            Events
+          </NavLink>
+        </li>
+        <li className="mb-4 lg:mb-0">
+          <NavLink
+            className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out"
+            onClick={() => setOpenMenu(false)}
+            to="/register"
+          >
+            Events
+          </NavLink>
+        </li>
       </ul>
 
       {/* Nav icon */}
