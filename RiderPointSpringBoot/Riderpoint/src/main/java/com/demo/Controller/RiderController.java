@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.demo.Model.Login;
 import com.demo.Model.RpDetails;
-import com.demo.Service.LoginServise;
+import com.demo.Service.LoginService;
 import com.demo.Service.RiderService;
 
 
@@ -29,6 +29,10 @@ public class RiderController {
 	@GetMapping("/Getall")
 	public List<RpDetails> displayAll(){
 		return serv.getAll();
+	}
+	@PostMapping("/Byroute")
+	public List<RpDetails> getbyroute(@RequestParam String start,@RequestParam String end){
+		return serv.getbyroute(start,end);
 	}
 //	@GetMapping("/")
 //	public List<Login> Login(@RequestParam String uname,@RequestParam String pass){

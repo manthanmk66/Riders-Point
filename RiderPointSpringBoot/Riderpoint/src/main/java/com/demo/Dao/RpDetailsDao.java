@@ -9,7 +9,10 @@ import com.demo.Model.RpDetails;
 
 public interface RpDetailsDao extends JpaRepository<RpDetails, Integer> {
 
-	@Query("select * from RpDetails where mode='rider'")
+	@Query(value="select * from Rp_Details where mode='rider'",nativeQuery = true)
 	List<RpDetails> getAllriders();
+
+	@Query(value="select * from Rp_Details where start",nativeQuery = true)
+	List<RpDetails> getbyroute(String start, String end);
 
 }

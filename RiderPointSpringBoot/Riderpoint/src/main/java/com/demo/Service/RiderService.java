@@ -8,4 +8,6 @@ public interface RiderService {
 
 	List<RpDetails> getAll();
 
+	List<RpDetails> getbyroute(String start, String end);
+
 }

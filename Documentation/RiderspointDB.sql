@@ -31,3 +31,5 @@ drop table if exists  loginrider;
 	insert into loginrp values(1,"rohit","rohit");
 	insert into loginrp values(2,"varadraj","varadraj");
 	
+
+	insert into rider_route_details values(1,"we are going to enjoy the ride","lonavala","1:30","wakad","10:30","2024-02-19",1);

@@ -16,14 +16,15 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.demo.Model.Login;
 import com.demo.Model.RpDetails;
-import com.demo.Service.LoginServise;
+import com.demo.Service.LoginService;
+
 
 
 @RestController
 @RequestMapping("/Login")
 public class LoginController {
 	@Autowired
-	private LoginServise serv;
+	private LoginService serv;
 	
 	@GetMapping("/")
 	public String Login(){
