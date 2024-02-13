@@ -10,7 +10,7 @@ import com.demo.Service.LoginService;
 @RequestMapping("/pillion")
 public class PillionController {
 	@Autowired
-	private LoginService service;
+	private LoginService serv;
 	
 	
 	
