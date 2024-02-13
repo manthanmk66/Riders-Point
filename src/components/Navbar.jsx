@@ -239,7 +239,7 @@ const Navbar = () => {
             onClick={() => setOpenMenu(false)}
             to="/register"
           >
-            Events
+            Signup
           </NavLink>
         </li>
       </ul>
