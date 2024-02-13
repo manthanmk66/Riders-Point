@@ -11,7 +11,7 @@ const About = () => {
   return (
    
      
-      <section className=" bg-secondary py-4 " >
+      <section className=" bg-secondary pb-2 pt-2 mb-2 mt-2" >
         
       <div className="mb-96 mt-96 flex justify-center gap-8">
 

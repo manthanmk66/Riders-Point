@@ -53,7 +53,7 @@ const slidesContainerStyles = {
 };
 
 const slidesContainerOverflowStyles = {
-   overflow: "hidden",
+  //  overflow: "hidden",
   height: "100%",
 };
 
