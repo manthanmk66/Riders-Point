@@ -9,6 +9,11 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
 import Error from "./Error";
 import GoToTop from "./components/GoToTop";
+import Events from "./Events";
+import Register from "./Register";
+import Privateroute from "./Privateroute";
+import Login from "./Login";
+import AddRide from "./pages/AddRide";
 
 const App = () => {
   const theme = {
@@ -43,7 +48,24 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/service" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/addride" element={<AddRide/>} />
+
+
+          {/* <Route path="/user" element={<Privateroute />} >
+
+          
+
+          </Route> */}
+
+          <Route path="/events" element={<Events />} />
+          <Route path="/register" element={<Register />} />
+
+
           <Route path="*" element={<Error />} />
+
+
+          
         </Routes>
 
         <Footer />
