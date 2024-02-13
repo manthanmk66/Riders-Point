@@ -18,8 +18,6 @@ import com.demo.Model.Login;
 import com.demo.Model.RpDetails;
 import com.demo.Service.LoginService;
 
-
-
 @RestController
 @RequestMapping("/Login")
 public class LoginController {
