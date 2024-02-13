@@ -9,7 +9,7 @@ import com.demo.Model.Login;
 import com.demo.Model.RpDetails;
 
 @Repository
-public interface dao extends JpaRepository<Login, Integer>{
+public interface Dao extends JpaRepository<Login, Integer>{
 
 }
 

@@ -11,7 +11,7 @@ import com.demo.Model.Login;
 import com.demo.Model.RpDetails;
 
 @Service
-public class LoginServiseImpl implements LoginServise {
+public class LoginServiceImpl implements LoginService {
 	@Autowired
 	private dao pdao;
 	@Autowired

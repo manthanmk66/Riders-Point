@@ -7,7 +7,7 @@ import com.demo.Model.RpDetails;
 
 
 
-public interface LoginServise {
+public interface LoginService {
 
 	List<Login> validUser(String uname, String pass);
 
