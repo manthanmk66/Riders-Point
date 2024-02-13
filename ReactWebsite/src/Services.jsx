@@ -26,10 +26,11 @@ import ImageSlider from "./components/ImageSlider"
     ];
 
     const containerStyles = {
-        width: "600px",
-        height: "300px",
-        margin: "0 auto",
+      width: "800px",  // Increase the width
+      height: "400px", // Increase the height
+      margin: "0 auto",
     };
+    
 
     return (
         <div className="mt-60 mb-60">
