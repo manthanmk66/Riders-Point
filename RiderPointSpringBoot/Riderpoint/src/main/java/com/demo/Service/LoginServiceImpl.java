@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.demo.Dao.RpDetailsDao;
-import com.demo.Dao.dao;
+import com.demo.Dao.Dao;
 import com.demo.Model.Login;
 import com.demo.Model.RpDetails;
 
 @Service
 public class LoginServiceImpl implements LoginService {
 	@Autowired
-	private dao pdao;
+	private Dao pdao;
 	@Autowired
 	private RpDetailsDao rp_details_dao;
 	
