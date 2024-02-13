@@ -22,3 +22,12 @@ drop table if exists  loginrider;
 
 	  
 	create table suggestion_table(rp_id int,suggestion varchar(100),constraint fk_sgtn_rid foreign key(rp_id) references rp_details(rp_id)on delete cascade);
+
+
+
+	 insert into rp_details values(1,"Rohit","6552355","pune","no","Rider");
+	 insert into rp_details(name,mobile_no,address,alert,mode) values("varadraj","45552355","pune","no","Rider");
+
+	insert into loginrp values(1,"rohit","rohit");
+	insert into loginrp values(2,"varadraj","varadraj");
+	

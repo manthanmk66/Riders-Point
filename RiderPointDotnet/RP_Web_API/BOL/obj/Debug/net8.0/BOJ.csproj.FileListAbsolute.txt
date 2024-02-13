@@ -1,0 +1,12 @@
+C:\Users\IET\Desktop\101\Dotnet_pro\newdotnetConnectTo git\Dotnet_Proj\CompleteWeb\BOJ\bin\Debug\net8.0\BOJ.deps.json
+C:\Users\IET\Desktop\101\Dotnet_pro\newdotnetConnectTo git\Dotnet_Proj\CompleteWeb\BOJ\bin\Debug\net8.0\BOJ.dll
+C:\Users\IET\Desktop\101\Dotnet_pro\newdotnetConnectTo git\Dotnet_Proj\CompleteWeb\BOJ\bin\Debug\net8.0\BOJ.pdb
+C:\Users\IET\Desktop\101\Dotnet_pro\newdotnetConnectTo git\Dotnet_Proj\CompleteWeb\BOJ\obj\Debug\net8.0\BOJ.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IET\Desktop\101\Dotnet_pro\newdotnetConnectTo git\Dotnet_Proj\CompleteWeb\BOJ\obj\Debug\net8.0\BOJ.AssemblyInfoInputs.cache
+C:\Users\IET\Desktop\101\Dotnet_pro\newdotnetConnectTo git\Dotnet_Proj\CompleteWeb\BOJ\obj\Debug\net8.0\BOJ.AssemblyInfo.cs
+C:\Users\IET\Desktop\101\Dotnet_pro\newdotnetConnectTo git\Dotnet_Proj\CompleteWeb\BOJ\obj\Debug\net8.0\BOJ.csproj.CoreCompileInputs.cache
+C:\Users\IET\Desktop\101\Dotnet_pro\newdotnetConnectTo git\Dotnet_Proj\CompleteWeb\BOJ\obj\Debug\net8.0\BOJ.sourcelink.json
+C:\Users\IET\Desktop\101\Dotnet_pro\newdotnetConnectTo git\Dotnet_Proj\CompleteWeb\BOJ\obj\Debug\net8.0\BOJ.dll
+C:\Users\IET\Desktop\101\Dotnet_pro\newdotnetConnectTo git\Dotnet_Proj\CompleteWeb\BOJ\obj\Debug\net8.0\refint\BOJ.dll
+C:\Users\IET\Desktop\101\Dotnet_pro\newdotnetConnectTo git\Dotnet_Proj\CompleteWeb\BOJ\obj\Debug\net8.0\BOJ.pdb
+C:\Users\IET\Desktop\101\Dotnet_pro\newdotnetConnectTo git\Dotnet_Proj\CompleteWeb\BOJ\obj\Debug\net8.0\ref\BOJ.dll

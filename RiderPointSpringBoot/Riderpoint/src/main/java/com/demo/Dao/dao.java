@@ -11,5 +11,5 @@ import com.demo.Model.RpDetails;
 @Repository
 public interface dao extends JpaRepository<Login, Integer>{
 
-
 }
+

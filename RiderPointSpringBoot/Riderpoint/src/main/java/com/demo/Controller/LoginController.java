@@ -15,16 +15,26 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.demo.Model.Login;
+import com.demo.Model.RpDetails;
 import com.demo.Service.LoginServise;
 
 
 @RestController
+@RequestMapping("/Login")
 public class LoginController {
 	@Autowired
 	private LoginServise serv;
 	
 	@GetMapping("/")
-	public List<Login> Login(@RequestParam String uname,@RequestParam String pass){
-		return serv.validUser( uname,  pass);
+	public String Login(){
+		return "Hello";
 	}
+	@GetMapping("/Getall")
+	public List<RpDetails> displayAll(){
+		return serv.getAll();
+	}
+//	@GetMapping("/")
+//	public List<Login> Login(@RequestParam String uname,@RequestParam String pass){
+//		return serv.validUser( uname,  pass);
+//	}
 }
