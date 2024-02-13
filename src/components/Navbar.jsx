@@ -180,7 +180,7 @@ const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
-    <nav className="py-6 lg:px-10 flex justify-between items-center z-50 text-black font-Josefin font-semibold">
+    <nav className="py-10 lg:px-10 flex justify-between items-center z-50 font-roboto text-black font-semibold ">
       {/* Logo */}
       <NavLink to="/" className="pt-14" style={{ paddingRight: "80rem"}}>
         <img src={logos} width={200} height={200} alt="logo" />

@@ -1,15 +1,15 @@
 import React from 'react';
-// import { isLoggedIn } from "aut"
-import { Navigate, Outlet } from 'react-router-dom';
+// import {isLoggedIn} from auth
+// import { Navigate, Outlet } from 'react-router-dom';
 
 const Privateroute = () => {
   return (
     <div>   
-      {isLoggedIn() ? (
+      {/* {isLoggedIn() ? (
         <Outlet />
       ) : (
         <Navigate to="/login" />
-      )}
+      )} */}
     </div>
   ); 
 }
