@@ -34,6 +34,11 @@ public class LoginServiceImpl implements LoginService {
 		rp_details_dao.save(rp2);
 		return rp_details_dao.findAll();
 	}
+	@Override
+	public RpDetails addRider(RpDetails rpdetalis) {
+		// TODO Auto-generated method stub
+		return rp_details_dao.save(rpdetalis);
+	}
 	
 	
 	

@@ -13,4 +13,6 @@ public interface LoginService {
 
 	List<RpDetails> getAll();
 
+	RpDetails addRider(RpDetails rpdetalis);
+
 }

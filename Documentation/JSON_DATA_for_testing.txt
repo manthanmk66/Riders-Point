@@ -1,0 +1,30 @@
+		{ "id":3,
+		    "name":"Raj",
+		    "mobile":"4442355",
+		    "address":"pune",
+		    "alert":"no",
+		    "mode":"Pillion"
+		}
+
+//for the rider status hybernate JSON data insert and "id" is in parent class
+
+{ "status_id":2,
+    "rp_id":{"id":2},
+    "bike":"Kawasaki Ninja",
+    "expense":3000
+    
+}
+
+
+//for Adding data in rider route details table check date and time
+
+{ "route_id":2,
+    "description":"Lets form a party",
+    "end_point":"lonavala",
+    "end_time":"22:00",
+    "start_point":"wakad",
+    "start_time":"10:00",
+    "travel_date":"2024-02-19",
+    "status_id":{"status_id":1}
+    
+}
