@@ -40,11 +40,11 @@ public class LoginController {
 				
 		if(s!=null)
 		{
-			return "Data added";
+			return "Data added successfully";
 		}
 		else
 		{
-			return "Failed to add plz re enter";
+			return "Failed to add please re enter";
 		}
 	}
 }
