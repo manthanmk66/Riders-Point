@@ -16,4 +16,17 @@ public interface RiderService {
 
 	Rider_route_details addRiderRoute(Rider_route_details rroute);
 
+
+	RpDetails updateRider(RpDetails rider);
+
+	Rider_Status editStatus(Rider_Status rsstatus);
+
+	Rider_route_details editRiderRoute(Rider_route_details rroute);
+
+	RpDetails getRiderbyid(String id);
+
+	Rider_Status getStatusbyid(String id);
+
+	Rider_route_details getRoutebyid(String id);
+
 }

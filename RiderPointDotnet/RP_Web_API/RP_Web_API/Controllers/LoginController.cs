@@ -21,11 +21,6 @@ namespace RP_Web_API.Controllers
             List<Login> lst=BLLservice.GetAlldetails();
             return lst; 
         }
-        [HttpGet(Name = "allRP")]
-        public IEnumerable<rp_details> Getallrp()
-        {
-            List<rp_details> lst=BLLservice.GetAllrp();
-            return lst; 
-        }
+       
     }
 }

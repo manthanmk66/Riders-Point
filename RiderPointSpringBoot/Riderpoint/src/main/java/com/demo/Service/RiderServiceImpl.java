@@ -41,5 +41,39 @@ public class RiderServiceImpl implements RiderService{
 	public Rider_route_details addRiderRoute(Rider_route_details rroute) {
 		return rp_route_dao.save(rroute);
 	}
+
+	@Override
+	public RpDetails updateRider(RpDetails rider) {
+		 return rp_details_dao.save(rider);
+	}
+
+	@Override
+	public Rider_Status editStatus(Rider_Status rsstatus) {
+		return rp_status_dao.save(rsstatus);
+	}
+
+	@Override
+	public Rider_route_details editRiderRoute(Rider_route_details rroute) {
+		return rp_route_dao.save(rroute);
+	}
+
+	@Override
+	public RpDetails getRiderbyid(String id) {
+		int newId=Integer.parseInt(id);
+		return rp_details_dao.getById(newId);
+	}
+
+	@Override
+	public Rider_Status getStatusbyid(String id) {
+		int newId=Integer.parseInt(id);
+		return rp_status_dao.getById(newId);
+	}
+
+	@Override
+	public Rider_route_details getRoutebyid(String id) {
+		int newId=Integer.parseInt(id);
+		return rp_route_dao.getById(newId);
+	}
+	
 	
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -34,10 +35,10 @@ public class RiderController {
 		return serv.getAll();
 	}
 	
+		
 	@PostMapping("/addStatus")
 	public String addStatus(@RequestBody Rider_Status rsstatus){
-		System.out.println("inside rp con");
-		System.out.println(rsstatus.getStatus_id()+" "+rsstatus.getRp_id());
+		
 		Rider_Status s=serv.addStatus(rsstatus);
 		if(s!=null)
 		{
@@ -68,6 +69,77 @@ public class RiderController {
 		return serv.getbyroute(start,end);
 	}
 	
+	
+	// All ID operation
+	@GetMapping("/getRiderByid/{id}")
+	public RpDetails getRiderbyid(@PathVariable String id){
+		//post man ---->select-->form data
+		return serv.getRiderbyid(id);
+	}
+	@GetMapping("/getStatusByid/{id}")
+	public Rider_Status getStatusbyid(@PathVariable String id){
+		//post man ---->select-->form data
+		return serv.getStatusbyid(id);
+	}
+	@GetMapping("/getRouteByid/{id}")
+	public Rider_route_details getRoutebyid(@PathVariable String id){
+		//post man ---->select-->form data
+		return serv.getRoutebyid(id);
+	}
+ 
+	
+	
+	// All Update operation
+	@PutMapping("/editRider")
+	public String updaterider(@RequestBody RpDetails rider){
+		
+		RpDetails s=serv.updateRider(rider);
+		if(s!=null)
+		{
+			return "Status added";
+		}
+		else
+		{
+			return "Failed to add plz re enter";
+		}
+	}
+	
+	@PutMapping("/editStatus")
+	public String editStatus(@RequestBody Rider_Status rsstatus){
+		
+		Rider_Status s=serv.editStatus(rsstatus);
+		if(s!=null)
+		{
+			return "Status added";
+		}
+		else
+		{
+			return "Failed to add plz re enter";
+		}
+	}
+	@PutMapping("/addRiderRoute")
+	public String editRiderRoute(@RequestBody Rider_route_details rroute){
+		Rider_route_details s=serv.editRiderRoute(rroute);
+		if(s!=null)
+		{
+			return "Rider route added";
+		}
+		else
+		{
+			return "Failed to add plz re enter";
+		}
+	}
+	
+	
+	
+	@PostMapping("/Alert")
+	public String sendAlert(@RequestParam String start,@RequestParam String end){
+		//post man ---->select-->form data
+		
+		List<Rider_route_details> lst=serv.getbyroute(start,end);
+		// we have to write code for alert 
+		return "Some one need help on your route";
+	}
 	
 
 }

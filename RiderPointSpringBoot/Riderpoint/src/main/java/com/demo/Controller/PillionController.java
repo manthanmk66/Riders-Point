@@ -9,8 +9,8 @@ import com.demo.Service.LoginService;
 @RestController
 @RequestMapping("/pillion")
 public class PillionController {
-	@Autowired
-	private LoginService serv;
+//	@Autowired
+//	private PillionService serv;
 	
 	
 	
