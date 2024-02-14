@@ -32,6 +32,8 @@ public class LoginServiceImpl implements LoginService {
 		rp_details_dao.save(rp1);
 		RpDetails rp2=new RpDetails(3,"Varadraj","99658","pune","no","Pillion");
 		rp_details_dao.save(rp2);
+		RpDetails rp3=new RpDetails(4,"Raj","97558","mumbai","no","rider");
+		rp_details_dao.save(rp3);
 		return rp_details_dao.findAll();
 	}
 	@Override
