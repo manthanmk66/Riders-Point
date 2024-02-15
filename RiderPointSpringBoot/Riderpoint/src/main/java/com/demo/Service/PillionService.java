@@ -15,4 +15,6 @@ public interface PillionService {
 
 	Pillion_route_details addPillionRoute(Pillion_route_details proute);
 
+	List<Pillion_route_details> getByRoute(String start_point, String end_point);
+
 }

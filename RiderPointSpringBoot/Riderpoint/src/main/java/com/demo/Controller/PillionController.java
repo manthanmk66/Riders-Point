@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.demo.Model.Pillion_Status;
@@ -57,8 +58,19 @@ public class PillionController {
 		}
 	}
 	
+	@SuppressWarnings("unchecked")
+	@PostMapping("/byRoute")
+	public ResponseEntity<List<Pillion_route_details>> getbyroute(@RequestParam String start_point,@RequestParam String end_point){
+		//In postman--->select-->Body-->formdata
+		List<Pillion_route_details> rlist=pservice.getByRoute(start_point,end_point);
+		if(rlist!=null) {
+			return ResponseEntity.ok(rlist);
+		}else {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		}
+	}
 	
-	
+
 	
 	
 
