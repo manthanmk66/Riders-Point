@@ -28,6 +28,14 @@ const AddRide = () => {
           <label htmlFor="date" className="block text-gray-700 font-bold mb-2">Date</label>
           <input type="date" id="date" name="date" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-indigo-500" />
         </div>
+        <div className="mb-4">
+          <label htmlFor="starttime" className="block text-gray-700 font-bold mb-2">Starting Time</label>
+          <input type="time" id="starttime" name="starttime" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-indigo-500" />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="endtime" className="block text-gray-700 font-bold mb-2">Ending Time</label>
+          <input type="time" id="endtime" name="endtime" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-indigo-500" />
+        </div>
         <button type="submit" onClick={handleSubmit} className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
           Add Ride
         </button>

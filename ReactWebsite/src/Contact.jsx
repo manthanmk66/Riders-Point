@@ -39,13 +39,17 @@ const Contact = () => {
       <h2 className="common-heading font-serif">Feel Free to Contact us</h2>
 
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15126.28620995241!2d73.92422475000001!3d18.59334505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c14df5c70e0d%3A0x2d19689e09e2fced!2sPhoenix%20Mall%20Washrooms!5e0!3m2!1sen!2sin!4v1658905192255!5m2!1sen!2sin"
-        width="100%"
-        height="450"
-        style={{ border: 0 }}
-        allowFullScreen=""
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"></iframe>
+  src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3026.0322536010217!2d73.8344!3d18.464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c14df5c70e0d%3A0x2d19689e09e2fced!2s${encodeURIComponent("Your Location")}!5e0!3m2!1sen!2sin!4v1658905192255!5m2!1sen!2sin`}
+  width="100%"
+  height="450"
+  style={{ border: 0 }}
+  allowFullScreen=""
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+></iframe>
+
+
+
 
       <div className="container">
         <div className="contact-form">
@@ -86,69 +90,3 @@ const Contact = () => {
 
 export default Contact;
 
-
-// import React from "react";
-
-// const Contact = () => {
-//   return (
-//     <section className="px-4 py-16">
-//       <h2 className="text-3xl font-semibold text-center mb-12">
-//         Feel Free to Contact us
-//       </h2>
-
-//       <iframe
-//         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15126.28620995241!2d73.92422475000001!3d18.59334505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c14df5c70e0d%3A0x2d19689e09e2fced!2sPhoenix%20Mall%20Washrooms!5e0!3m2!1sen!2sin!4v1658905192255!5m2!1sen!2sin"
-//         width="100%"
-//         height="450"
-//         style={{ border: 0 }}
-//         allowFullScreen=""
-//         loading="lazy"
-//         referrerPolicy="no-referrer-when-downgrade"
-//         className="mb-12"></iframe>
-
-//       <div className="container mx-auto max-w-2xl">
-//         <div className="bg-white rounded-lg shadow-lg p-8">
-//           <form
-//             action="https://formspree.io/f/xgedgjkr"
-//             method="POST"
-//             className="space-y-6">
-//             <input
-//               type="text"
-//               name="username"
-//               placeholder="Username"
-//               autoComplete="off"
-//               required
-//               className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:border-indigo-500"
-//             />
-
-//             <input
-//               type="email"
-//               name="email"
-//               placeholder="Email"
-//               autoComplete="off"
-//               required
-//               className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:border-indigo-500"
-//             />
-
-//             <textarea
-//               name="message"
-//               cols="30"
-//               rows="6"
-//               placeholder="Message"
-//               autoComplete="off"
-//               required
-//               className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:border-indigo-500"></textarea>
-
-//             <button
-//               type="submit"
-//               className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 transition duration-300 ease-in-out">
-//               Send
-//             </button>
-//           </form>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Contact;
