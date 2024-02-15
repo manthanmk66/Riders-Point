@@ -1,6 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 
 const Register = () => {
+
+  //write here state varaible and assign it respective inputs
+  const[name,setName]=useState('');
+  const[email,setEmail]=useState('');
+  const[password,setPassword]=useState('');
+  const handleSignUp=(e)=>{
+    e.preventDefault();
+    console.log(name,email,password);
+}
+  
+
   return (
   
         <div className="h-[100vh] items-center flex justify-center px-5 lg:px-0 font-Josefin">
@@ -17,10 +29,10 @@ const Register = () => {
               <div className=" flex flex-col items-center">
                 <div className="text-center">
                   <h1 className="text-2xl xl:text-4xl font-extrabold text-blue-900">
-                    Student Sign up
+                     Sign up
                   </h1>
                   <p className="text-[12px] text-gray-500">
-                    Hey enter your details to create your account
+                    Please enter your details to create your account
                   </p>
                 </div>
                 <div className="w-full flex-1 mt-8">
@@ -28,13 +40,16 @@ const Register = () => {
                     <input
                       className="w-full px-5 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                       type="text"
-                      placeholder="Enter your name"
-                    />
+                      placeholder="Enter your name"  value={name} onChange={n=>{
+                        setName(n.target.value);
+                      }} />
                     <input
                       className="w-full px-5 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                       type="email"
-                      placeholder="Enter your email"
-                    />
+                      placeholder="Enter your email"  value={email} onChange={e=>{
+                        setEmail(e.target.value);
+                      }} />
+                    
                     {/* <input
                       className="w-full px-5 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                       type="tel"
@@ -43,9 +58,11 @@ const Register = () => {
                     <input
                       className="w-full px-5 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                       type="password"
-                      placeholder="Password"
-                    />
-                    <button className="mt-5 tracking-wide font-semibold bg-blue-900 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                      placeholder="Enter your Password"  value={password} onChange={p=>{
+                        setPassword(p.target.value);
+                      }} />
+                    
+                    <button onClick={handleSignUp} className ="mt-5 tracking-wide font-semibold bg-blue-900 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                       <svg
                         className="w-6 h-6 -ml-2"
                         fill="none"
