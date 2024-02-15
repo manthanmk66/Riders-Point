@@ -201,9 +201,9 @@ const Navbar = () => {
           <NavLink
             className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out"
             onClick={() => setOpenMenu(false)}
-            to="/about"
+            to="/rides"
           >
-            About
+            Rides
           </NavLink>
         </li>
         <li className="mb-4 lg:mb-0">

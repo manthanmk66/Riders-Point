@@ -1,4 +1,4 @@
-import About from "./About";
+
 import Contact from "./Contact";
 import Home from "./Home";
 import Services from "./Services";
@@ -14,6 +14,9 @@ import Register from "./Register";
 import Privateroute from "./Privateroute";
 import Login from "./Login";
 import AddRide from "./pages/AddRide";
+import ScheduledRide from "./pages/ScheduledRide";
+import Rides from "./Rides";
+import Ride from "./pages/Ride";
 
 const App = () => {
   const theme = {
@@ -21,7 +24,7 @@ const App = () => {
       heading: "rgb(24 24 29)",
       text: "rgb(24 24 29)",
       white: "#fff",
-      black: " #212529",
+      black: " #000",
       helper: "#8490ff",
       bg: "rgb(249 249 255)",
       footer_bg: "#0a1435",
@@ -41,15 +44,18 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <GoToTop />
+     
       <BrowserRouter>
         <Header />
+        
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/rides" element={<Rides/>} />
           <Route path="/service" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/addride" element={<AddRide/>} />
+          <Route path="/scheduledride" element={<ScheduledRide/>} />
 
 
           {/* <Route path="/user" element={<Privateroute />} >
@@ -75,3 +81,5 @@ const App = () => {
 };
 
 export default App;
+
+
