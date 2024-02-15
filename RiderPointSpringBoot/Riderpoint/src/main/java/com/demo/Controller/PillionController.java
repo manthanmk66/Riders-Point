@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.demo.Model.Pillion_Status;
-import com.demo.Model.Rider_Status;
+import com.demo.Model.Pillion_route_details;
 import com.demo.Model.RpDetails;
 import com.demo.Service.PillionService;
 
@@ -44,9 +44,18 @@ public class PillionController {
 	}
 	
 	
-	
-	
-	
+	@PostMapping("/addPillionRoute")
+	public ResponseEntity<String> addRiderRoute(@RequestBody Pillion_route_details proute){
+		Pillion_route_details s=pservice.addPillionRoute(proute);
+		if(s!=null)
+		{
+			return ResponseEntity.ok("Route Added!");
+		}
+		else
+		{
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		}
+	}
 	
 	
 	

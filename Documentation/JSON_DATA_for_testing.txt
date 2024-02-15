@@ -28,3 +28,14 @@
     "status_id":{"status_id":1}
     
 }
+
+//For adding data in Pillion Route Details
+
+{ "route_id":1  ,
+    "status_id":{"status_id":1},
+    "start_point":"Shivajinagar",
+    "end_point":"Imagica",
+    "travel_date":"2024-02-23",
+    "description":"Lets enjoy buddies!"
+    
+}
