@@ -76,7 +76,7 @@ public class LoginServiceImpl implements LoginService {
         userInfo.setPassword(encoder.encode(userInfo.getPassword())); 
         return pdao.save(userInfo); 
          
-    } 
-	
+    }
+
 	
 }

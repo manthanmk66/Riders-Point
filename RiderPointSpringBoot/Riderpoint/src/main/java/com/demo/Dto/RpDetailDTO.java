@@ -1,4 +1,4 @@
-package com.demo.Dto;
+package com.demo.dto;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
