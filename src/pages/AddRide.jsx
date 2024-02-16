@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -12,7 +12,10 @@ const AddRide = () => {
     });
   };
 
+  const [rides,setRides]=useState
+
   return (
+    
     <div className="container mx-auto p-96 text-3xl flex-row font-roboto">
       <ToastContainer /> 
       <form className="max-w-lg mx-auto" onSubmit={handleSubmit}>

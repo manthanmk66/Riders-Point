@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
-import { useEffect } from 'react';
-
-import { useState } from 'react';
+import React from 'react';
+import { toast } from 'react-toastify';
+import { useEffect, useState } from 'react'
 import Ride from './Ride';
 import base_url from '../api/bootapi';
 import axios from "axios";
@@ -11,23 +10,36 @@ import axios from "axios";
 
 //function to call server
 
-const getallScheduledRidesFromServer()=>{
-  axios.get(`${base_url}/ scheduledRides`).then(
-    (response)=>{
-      //for success
-      console.log(response);
-      toast.success("Rides are Added")
-    };
-    (error)=>{
-      //for error
-      console.log(error);
-      toast.error("something went wrong")
-    }
-  
+// const getallScheduledRidesFromServer = () => {
+//   axios.get(`${base_url}/ scheduledRides`).then(
+//     (response)=>{
+//       //for success
+//       console.log(response);
+//       toast.success("Rides are Added")
+//     })
+//     .catch((error)=>{
+//       //for error
+//       console.log(error);
+//       toast.error("something went wrong")
+//     });
+// };
 
-
-  );
+const getAllScheduledRidesFromServer = () => {
+  return axios.get(`${base_url}/scheduledRides`)
+    .then((response) => {
+      // Handle success
+      console.log(response.data); // Log the actual rides data
+      toast.success("Rides are Added");
+      return response.data; // Return the rides data
+    })
+    .catch((error) => {
+      // Handle error
+      console.error(error.message);
+      toast.error("Failed to fetch rides. Please try again.");
+      throw error; // Re-throw to allow handling elsewhere if needed
+    });
 };
+
 
 const ScheduledRide=()=>{
   useEffect(()=>{
