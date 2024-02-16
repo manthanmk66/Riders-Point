@@ -72,4 +72,9 @@ public class PillionServiceImpl implements PillionService {
 		return modelMapper.map(prd, Pillion_route_details_Dto.class);
 	}
 
+	@Override
+	public RpDetails updatePillion(RpDetails pillion) {
+		return rp_details_dao.save(pillion);
+	}
+
 }

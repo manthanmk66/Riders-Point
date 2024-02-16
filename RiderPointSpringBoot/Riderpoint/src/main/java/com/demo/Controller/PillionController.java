@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -103,6 +104,20 @@ public class PillionController {
 		if(prd != null) {
 			return ResponseEntity.ok(prd);
 		}else {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		}
+	}
+	
+	@PutMapping("/editPillion")
+	public ResponseEntity<RpDetails> updatePillion(@RequestBody RpDetails pillion){
+		
+		RpDetails p= pservice.updatePillion(pillion);
+		if(p!=null)
+		{
+			return ResponseEntity.ok(p);
+		}
+		else
+		{
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
 	}

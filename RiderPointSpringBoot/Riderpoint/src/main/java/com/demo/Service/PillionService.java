@@ -26,4 +26,6 @@ public interface PillionService {
 
 	Pillion_route_details_Dto getRouteById(String route_id);
 
+	RpDetails updatePillion(RpDetails pillion);
+
 }
