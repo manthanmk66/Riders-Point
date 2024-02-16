@@ -3,10 +3,11 @@ package com.demo.Model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="loginrp")
 public class Login {
 	@Id
 	private int loginid;
@@ -18,6 +19,13 @@ public class Login {
 	public Login() {
 		super();
 	}
+	
+	public Login(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
+	}
+
 	public Login(RpDetails id, String username, String password) {
 		super();
 		this.id = id;

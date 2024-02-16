@@ -17,17 +17,37 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.demo.Model.Login;
 import com.demo.Model.RpDetails;
+import com.demo.Service.JwtService;
 import com.demo.Service.LoginService;
+import com.demo.dto.LoginResponse;
 
 @RestController
-@RequestMapping("/Login")
+@RequestMapping("/auth")
 public class LoginController {
 	@Autowired
 	private LoginService serv;
 	
-	@GetMapping("/")
-	public String Login(){
-		return "Hello";
+	@Autowired
+	private JwtService jwtService;
+	
+	/**
+	 * @return
+	 */
+	@PostMapping("/login")
+	public LoginResponse Login(@RequestBody Login loginCred){
+		
+		boolean isValid= serv.validUser(loginCred.getUsername(), loginCred.getPassword());
+		LoginResponse response =new LoginResponse(true,"Login succesfully...");
+		System.out.println("In Controller");
+		if(isValid) {
+			//create and add jwt token
+			response.setToken(jwtService.generateToken(loginCred.getUsername()));
+		}else {
+			response.setStatus(false);
+			response.setMessage("Username or password not matching.");
+		}
+		
+		return response;
 	}
 	@GetMapping("/Getall")
 	public List<RpDetails> displayAll(){

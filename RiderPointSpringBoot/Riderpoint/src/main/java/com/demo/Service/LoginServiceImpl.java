@@ -3,6 +3,7 @@ package com.demo.Service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import com.demo.Dao.Dao;
@@ -10,6 +11,7 @@ import com.demo.Dao.RpDetailsDao;
 import com.demo.Dao.Dao;
 import com.demo.Model.Login;
 import com.demo.Model.RpDetails;
+import com.demo.config.CustomUserDetails;
 
 @Service
 public class LoginServiceImpl implements LoginService {
@@ -19,9 +21,11 @@ public class LoginServiceImpl implements LoginService {
 	private RpDetailsDao rp_details_dao;
 	
 	
-	public List<Login> validUser(String uname, String pass) {
+	public Boolean validUser(String uname, String pass) {
 		// TODO Auto-generated method stub
-		return pdao.findAll();
+		System.out.println(pdao.getUser(uname, pass));
+		return pdao.getUser(uname, pass).size()>0;
+		
 //		return lst;
 	}
 	@Override
@@ -40,6 +44,11 @@ public class LoginServiceImpl implements LoginService {
 	@Override
 	public RpDetails addRider(RpDetails rpdetalis) {
 		return rp_details_dao.save(rpdetalis);
+	}
+	@Override
+	public UserDetails getUserByUserName(String username) {
+	System.out.println(username);
+		return new CustomUserDetails(pdao.getUser(username));
 	}
 	
 	
