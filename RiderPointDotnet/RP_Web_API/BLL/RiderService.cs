@@ -11,5 +11,13 @@ public static class RiderService
         lst=RiderBDmanager.GetAllriders();
         return lst;
     }
-
+   public static bool addStatus(Status_rider rider){
+         return RiderBDmanager.addstatus(rider);
+    } 
+    public static bool addRiderRoute(Rider_route_details rider){
+         return RiderBDmanager.addRiderRoute(rider);
+    }
+    public static List<Rider_route_details> getbyroute(int r){
+         return RiderBDmanager.getbyroute(r);
+    }
 }
