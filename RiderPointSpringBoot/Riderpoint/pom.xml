@@ -70,8 +70,7 @@
     			<groupId>org.springframework.boot</groupId>
     			<artifactId>spring-boot-maven-plugin</artifactId>
     			<version>2.7.14</version>
-		</dependency>
-		
+		</dependency>		
 		<!--Deps for Authentication-->
 
 <dependency> 
@@ -99,7 +98,12 @@
             <version>0.11.5</version> 
         </dependency>
 		<!--End of Deps for Authentication-->
-		
+		<!-- https://mvnrepository.com/artifact/org.modelmapper/modelmapper -->
+		<dependency>
+    		<groupId>org.modelmapper</groupId>
+    		<artifactId>modelmapper</artifactId>
+    		<version>3.2.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
