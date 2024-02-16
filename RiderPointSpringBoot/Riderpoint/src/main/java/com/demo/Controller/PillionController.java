@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.demo.Dto.Pillion_Status_Dto;
+import com.demo.Dto.Pillion_route_details_Dto;
 import com.demo.Dto.RpDetailDTO;
 import com.demo.Model.Pillion_Status;
 import com.demo.Model.Pillion_route_details;
@@ -91,6 +92,16 @@ public class PillionController {
 		Pillion_Status_Dto ps =pservice.getStatusById(status_id);
 		if(ps != null) {
 			return ResponseEntity.ok(ps);
+		}else {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		}
+	}
+	
+	@GetMapping("/getRouteById/{route_id}")
+	public ResponseEntity<Pillion_route_details_Dto> getRoute(@PathVariable String route_id){
+		Pillion_route_details_Dto prd = pservice.getRouteById(route_id);
+		if(prd != null) {
+			return ResponseEntity.ok(prd);
 		}else {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}

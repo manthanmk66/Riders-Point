@@ -10,6 +10,7 @@ import com.demo.Dao.PillionRouteDetailsDao;
 import com.demo.Dao.PillionStatusDao;
 import com.demo.Dao.RpDetailsDao;
 import com.demo.Dto.Pillion_Status_Dto;
+import com.demo.Dto.Pillion_route_details_Dto;
 import com.demo.Dto.RpDetailDTO;
 import com.demo.Model.Pillion_Status;
 import com.demo.Model.Pillion_route_details;
@@ -62,6 +63,13 @@ public class PillionServiceImpl implements PillionService {
 		int sid= Integer.parseInt(status_id);
 		Pillion_Status ps= ps_dao.findStatusById(sid);
 		return modelMapper.map(ps, Pillion_Status_Dto.class);
+	}
+
+	@Override
+	public Pillion_route_details_Dto getRouteById(String route_id) {
+		int rid= Integer.parseInt(route_id);
+		Pillion_route_details prd= prd_dao.findRouteById(rid);
+		return modelMapper.map(prd, Pillion_route_details_Dto.class);
 	}
 
 }
