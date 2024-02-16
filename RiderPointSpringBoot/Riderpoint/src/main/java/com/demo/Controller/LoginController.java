@@ -26,8 +26,9 @@ public class LoginController {
 	private LoginService serv;
 	
 	@GetMapping("/")
-	public String Login(){
-		return "Hello";
+	public void Login(@RequestBody Login login){
+		Login user= serv.validUser(login.getUsername(), login.getPassword());
+		System.out.println(user.getUsername()+user.getPassword());
 	}
 	@GetMapping("/Getall")
 	public List<RpDetails> displayAll(){

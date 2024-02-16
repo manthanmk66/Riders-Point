@@ -14,6 +14,9 @@
     "expense":3000
     
 }
+// login table
+insert into Login(password,username,rp_id) values("manthan","manthan",2);
+ insert into Login(loginid,password,username,rp_id) values(1,"rohit","rohit",1);
 
 
 //for Adding data in rider route details table check date and time

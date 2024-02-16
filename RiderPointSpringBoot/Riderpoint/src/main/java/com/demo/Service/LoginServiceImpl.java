@@ -19,10 +19,10 @@ public class LoginServiceImpl implements LoginService {
 	private RpDetailsDao rp_details_dao;
 	
 	
-	public List<Login> validUser(String uname, String pass) {
-		// TODO Auto-generated method stub
-		return pdao.findAll();
-//		return lst;
+	public Login validUser(String uname, String pass) {
+		
+		 Login rider=pdao.getValidUser(uname,pass);
+		return rider;
 	}
 	@Override
 	public List<RpDetails> getAll() {

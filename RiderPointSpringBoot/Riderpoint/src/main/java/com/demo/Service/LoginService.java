@@ -9,7 +9,7 @@ import com.demo.Model.RpDetails;
 
 public interface LoginService {
 
-	List<Login> validUser(String uname, String pass);
+	Login validUser(String uname, String pass);
 
 	List<RpDetails> getAll();
 
