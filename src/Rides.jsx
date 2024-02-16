@@ -4,9 +4,9 @@ import { useGlobalContext } from "./context";
 import { NavLink } from "react-router-dom";
 
 const Rides = () => {
-  const { udpateAboutPage } = useGlobalContext();
+  // const { udpateAboutPage } = useGlobalContext();
 
-  useEffect(() => udpateAboutPage(), []);
+  // useEffect(() => udpateAboutPage(), []);
 
   return (
    
