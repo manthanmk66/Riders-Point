@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.demo.Dao.PillionRouteDetailsDao;
 import com.demo.Dao.PillionStatusDao;
 import com.demo.Dao.RpDetailsDao;
+import com.demo.Dto.Pillion_Status_Dto;
 import com.demo.Dto.RpDetailDTO;
 import com.demo.Model.Pillion_Status;
 import com.demo.Model.Pillion_route_details;
@@ -54,6 +55,13 @@ public class PillionServiceImpl implements PillionService {
 		int pid=Integer.parseInt(id);
 		RpDetails rp=rp_details_dao.findPillionById(pid);
 		return modelMapper.map(rp, RpDetailDTO.class);
+	}
+
+	@Override
+	public Pillion_Status_Dto getStatusById(String status_id) {
+		int sid= Integer.parseInt(status_id);
+		Pillion_Status ps= ps_dao.findStatusById(sid);
+		return modelMapper.map(ps, Pillion_Status_Dto.class);
 	}
 
 }

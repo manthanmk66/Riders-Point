@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.demo.Dto.Pillion_Status_Dto;
 import com.demo.Dto.RpDetailDTO;
 import com.demo.Model.Pillion_Status;
 import com.demo.Model.Pillion_route_details;
@@ -63,10 +64,9 @@ public class PillionController {
 		}
 	}
 	
-	@SuppressWarnings("unchecked")
 	@PostMapping("/byRoute")
 	public ResponseEntity<List<Pillion_route_details>> getbyroute(@RequestParam String start_point,@RequestParam String end_point){
-		//In postman--->select-->Body-->formdata
+		//In postman--->select-->Body-->form-data
 		List<Pillion_route_details> rlist=pservice.getByRoute(start_point,end_point);
 		if(rlist!=null) {
 			return ResponseEntity.ok(rlist);
@@ -78,10 +78,19 @@ public class PillionController {
 	
 	@GetMapping("/getPillion/{id}")
 	public ResponseEntity<RpDetailDTO> getPillion(@PathVariable String id){
-		//post man ---->select-->form data
 		RpDetailDTO p = pservice.getPillionById(id);
 		if(p != null) {
 			return ResponseEntity.ok(p);
+		}else {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		}
+	}
+	
+	@GetMapping("/getStatusById/{status_id}")
+	public ResponseEntity<Pillion_Status_Dto> getStatus(@PathVariable String status_id){
+		Pillion_Status_Dto ps =pservice.getStatusById(status_id);
+		if(ps != null) {
+			return ResponseEntity.ok(ps);
 		}else {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}

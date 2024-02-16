@@ -2,6 +2,7 @@ package com.demo.Service;
 
 import java.util.List;
 
+import com.demo.Dto.Pillion_Status_Dto;
 import com.demo.Dto.RpDetailDTO;
 import com.demo.Model.Pillion_Status;
 import com.demo.Model.Pillion_route_details;
@@ -19,5 +20,7 @@ public interface PillionService {
 	List<Pillion_route_details> getByRoute(String start_point, String end_point);
 
 	RpDetailDTO getPillionById(String id);
+
+	Pillion_Status_Dto getStatusById(String status_id);
 
 }
