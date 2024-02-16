@@ -12,6 +12,9 @@ public interface RpDetailsDao extends JpaRepository<RpDetails, Integer> {
 	@Query(value="select * from Rp_Details where mode='rider'",nativeQuery = true)
 	List<RpDetails> getAllriders();
 
+	@Query(value="select * from Rp_Details where mode='pillion'",nativeQuery =true)
+	List<RpDetails> getAllPillions();
+
 	
 
 }

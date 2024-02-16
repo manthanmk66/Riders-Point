@@ -3,14 +3,21 @@ package com.demo.Model;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 @Entity
 public class Pillion_route_details {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Cascade(CascadeType.DELETE)
 	private int route_id ;
 	@OneToOne
 	@JoinColumn(name="status_id")

@@ -74,6 +74,25 @@ public class RiderServiceImpl implements RiderService{
 		int newId=Integer.parseInt(id);
 		return rp_route_dao.getById(newId);
 	}
+
+	
+
+	@Override
+	public void deleteRiderbyid(String id) {
+		int newId=Integer.parseInt(id);
+		 rp_details_dao.deleteById(newId);;
+	}
+
+	@Override
+	public void deleteStatusbyid(String status_id) {
+		int newId=Integer.parseInt(status_id);
+		rp_status_dao.deleteById(newId);
+	}
+	@Override
+	public void deleteRiderRoute(String route_id) {
+		int newId=Integer.parseInt(route_id);
+		rp_route_dao.deleteById(newId);
+	}
 	
 	
 }

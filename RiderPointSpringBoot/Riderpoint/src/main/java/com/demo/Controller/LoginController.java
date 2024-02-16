@@ -26,8 +26,21 @@ public class LoginController {
 	private LoginService serv;
 	
 	@GetMapping("/")
-	public String Login(){
-		return "Hello";
+	public void Login(@RequestBody Login login){
+		Login user= serv.validUser(login.getUsername(), login.getPassword());
+		System.out.println(user.getUsername()+user.getPassword());
+	}
+	@GetMapping("/addLoginDetails")
+	public String addLogDetails(@RequestBody Login login){
+		Login isPresent=serv.isPresent(login.getUsername()); 
+		if(isPresent!=null) {
+			return "username already present";
+		}
+		else {
+		Login user= serv.addLogDetails(login);
+		System.out.println(user.getUsername()+user.getPassword());
+		return "Data added...";
+		}
 	}
 	@GetMapping("/Getall")
 	public List<RpDetails> displayAll(){

@@ -14,6 +14,9 @@
     "expense":3000
     
 }
+// login table
+insert into Login(password,username,rp_id) values("manthan","manthan",2);
+ insert into Login(loginid,password,username,rp_id) values(1,"rohit","rohit",1);
 
 
 //for Adding data in rider route details table check date and time
@@ -26,5 +29,28 @@
     "start_time":"10:00",
     "travel_date":"2024-02-19",
     "status_id":{"status_id":1}
+    
+}
+<<<<<<< HEAD
+{ 
+    "status_id":2,
+    "start_point":"wakad",
+    "end_point":"lonavala",
+    "travel_date":"2024-02-19",
+    "start_time":"10:00",
+    "end_time":"22:00",
+    "description":"Lets form a party"
+    
+=======
+
+//For adding data in Pillion Route Details
+
+{ "route_id":1  ,
+    "status_id":{"status_id":1},
+    "start_point":"Shivajinagar",
+    "end_point":"Imagica",
+    "travel_date":"2024-02-23",
+    "description":"Lets enjoy buddies!"
+>>>>>>> a9d403082b12ef3ae8e7976249cb6cbc423e75f7
     
 }

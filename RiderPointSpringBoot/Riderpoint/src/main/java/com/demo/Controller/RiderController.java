@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,6 +33,7 @@ public class RiderController {
 	
 	@GetMapping("/Getall")
 	public List<RpDetails> displayAll(){
+		System.out.println("giiii");
 		return serv.getAll();
 	}
 	
@@ -76,18 +78,16 @@ public class RiderController {
 		//post man ---->select-->form data
 		return serv.getRiderbyid(id);
 	}
-	@GetMapping("/getStatusByid/{id}")
+	@GetMapping("/getStatusByid/{status_id}")
 	public Rider_Status getStatusbyid(@PathVariable String id){
 		//post man ---->select-->form data
 		return serv.getStatusbyid(id);
 	}
-	@GetMapping("/getRouteByid/{id}")
+	@GetMapping("/getRouteByid/{route_id}")
 	public Rider_route_details getRoutebyid(@PathVariable String id){
 		//post man ---->select-->form data
 		return serv.getRoutebyid(id);
-	}
- 
-	
+	}	
 	
 	// All Update operation
 	@PutMapping("/editRider")
@@ -130,6 +130,23 @@ public class RiderController {
 		}
 	}
 	
+	@DeleteMapping("/deleteRiderByid/{id}")
+	public String deleteRiderbyid(@PathVariable String id){
+		//post man ---->select-->form data
+		serv.deleteRiderbyid(id);
+		return "Deleted...";
+	}
+	@DeleteMapping("/deleteStatusByid/{status_id}")
+	public String deleteStatusbyid(@PathVariable String status_id){
+		//post man ---->select-->form data
+		serv.deleteStatusbyid(status_id);
+		return "Deleted...";
+	}
+	@DeleteMapping("/deleteRiderByid/{route_id}")
+	public String deleteRiderRoute(@PathVariable String route_id){
+		serv.deleteRiderRoute(route_id);
+		return "Deleted...";
+	}
 	
 	
 	@PostMapping("/Alert")

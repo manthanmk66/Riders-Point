@@ -29,4 +29,12 @@ public interface RiderService {
 
 	Rider_route_details getRoutebyid(String id);
 
+	void deleteRiderbyid(String id);
+
+	void deleteStatusbyid(String status_id);
+
+	void deleteRiderRoute(String route_id);
+
+	
+
 }
