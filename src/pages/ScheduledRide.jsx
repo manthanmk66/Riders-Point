@@ -1,10 +1,38 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { useState } from 'react';
 import Ride from './Ride';
+import base_url from '../api/bootapi';
+import axios from "axios";
 
+
+
+
+//function to call server
+
+const getallScheduledRidesFromServer()=>{
+  axios.get(`${base_url}/ scheduledRides`).then(
+    (response)=>{
+      //for success
+      console.log(response);
+      toast.success("Rides are Added")
+    };
+    (error)=>{
+      //for error
+      console.log(error);
+      toast.error("something went wrong")
+    }
+  
+
+
+  );
+};
 
 const ScheduledRide=()=>{
+  useEffect(()=>{
+
+  })
 
 const[ride,setRide]=useState([
   {
