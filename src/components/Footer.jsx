@@ -204,6 +204,8 @@ const Footer = () => {
             <form className="mt-4">
               <input
                 type="email"
+                id="emailid"
+                name="emilid"
                 required
                 autoComplete="off"
                 placeholder="Email"
@@ -225,7 +227,7 @@ const Footer = () => {
               </div>
               <div>
                 <a
-                  // href="https://www.youtube.com/channel/UCwfaAHy4zQUb2APNOGXUCCA"
+                  // href=""
                   target="_blank"
                   rel="noopener noreferrer"
                 >

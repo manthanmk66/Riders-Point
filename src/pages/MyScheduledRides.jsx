@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import { toast } from 'react-toastify';
 import { useEffect, useState } from 'react'
@@ -26,7 +28,7 @@ const getAllScheduledRidesFromServer = () => {
 };
 
 
-const ScheduledRide=()=>{
+const MyScheduledRides=()=>{
   useEffect(()=>{
 
   })
@@ -53,7 +55,7 @@ const[ride,setRide]=useState([
   return(
     <div className='font-serif text-6xl  justify-center mb-60   pb-2 pt-2  mt-2  '>
     <p>All Rides</p> 
-    <p>List of Rides As Follows</p>
+    <p>List of My Rides As Follows</p>
   
 
     {
@@ -67,31 +69,10 @@ const[ride,setRide]=useState([
   );
 
 };
-export default ScheduledRide;
+export default MyScheduledRides;
 
 
 
 
 
 
-// const App = () => {
-//   const ScheduledRide = [
-//     // Sample ride objects
-//     {
-//       route_id: 1,
-//       start_point: 'Point A',
-//       end_point: 'Point B',
-//       travel_date: '2024-02-20',
-//       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-//     },
-//     // More ride objects...
-//   ];
-
-//   return (
-//     <div>
-//       <ScheduledRide ScheduledRide={ScheduledRide} />
-//     </div>
-//   );
-// };
-
-// export default App;

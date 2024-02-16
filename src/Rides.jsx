@@ -15,7 +15,7 @@ const Rides = () => {
         
       <div className="mb-96 mt-96 flex justify-center gap-8">
 
-<a href="./addride">
+<a href="./ridestatus">
 <button type="button" class="flex items-center justify-center text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-3xl px-20 py-10 text-center me-2 mb-2">
   <span>Add A Ride</span>
   <svg class="w-3.5 h-3.5 ms-2 transform rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">

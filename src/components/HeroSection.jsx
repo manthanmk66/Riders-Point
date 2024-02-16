@@ -121,7 +121,7 @@ const HeroSection = () => {
 // };
 <div className='relative'>
 
-<a href='/Home'><img src={logo} alt="Background" className="  w-full h-50px relative mt-[-300px]" /></a>
+<a href='/Home'><img src={logo} alt="Background" className="  w-full h-20px relative mt-[-300px]" /></a>
 <h1 className="text-3xl  text-white">Start Your Dream Adventure</h1>
 
 

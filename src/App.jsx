@@ -17,6 +17,7 @@ import AddRide from "./pages/AddRide";
 import ScheduledRide from "./pages/ScheduledRide";
 import Rides from "./Rides";
 import Ride from "./pages/Ride";
+import RideStatus from "./pages/RideStatus";
 
 const App = () => {
   const theme = {
@@ -56,6 +57,8 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/addride" element={<AddRide/>} />
           <Route path="/scheduledride" element={<ScheduledRide/>} />
+          <Route path="/scheduledride" element={<ScheduledRide/>} />
+          <Route path="/ridestatus" element={<RideStatus/>} />
 
 
           {/* <Route path="/user" element={<Privateroute />} >
