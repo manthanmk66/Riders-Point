@@ -3,7 +3,7 @@ import HeroSection from "./components/HeroSection";
 import { useGlobalContext } from "./context";
 import Services from "./Services";
 import Contact from "./Contact";
-import About from "./About";
+import About from "./Rides";
 
 const Home = () => {
   const { updateHomePage } = useGlobalContext();

@@ -28,6 +28,7 @@
     "status_id":{"status_id":1}
     
 }
+<<<<<<< HEAD
 { 
     "status_id":2,
     "start_point":"wakad",
@@ -37,5 +38,16 @@
     "end_time":"22:00",
     "description":"Lets form a party"
     
+=======
+
+//For adding data in Pillion Route Details
+
+{ "route_id":1  ,
+    "status_id":{"status_id":1},
+    "start_point":"Shivajinagar",
+    "end_point":"Imagica",
+    "travel_date":"2024-02-23",
+    "description":"Lets enjoy buddies!"
+>>>>>>> a9d403082b12ef3ae8e7976249cb6cbc423e75f7
     
 }

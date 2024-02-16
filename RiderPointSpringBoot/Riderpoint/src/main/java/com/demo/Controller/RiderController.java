@@ -33,6 +33,7 @@ public class RiderController {
 	
 	@GetMapping("/Getall")
 	public List<RpDetails> displayAll(){
+		System.out.println("giiii");
 		return serv.getAll();
 	}
 	

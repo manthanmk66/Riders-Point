@@ -1,4 +1,4 @@
-import About from "./About";
+
 import Contact from "./Contact";
 import Home from "./Home";
 import Services from "./Services";
@@ -14,6 +14,8 @@ import Register from "./Register";
 import Privateroute from "./Privateroute";
 import Login from "./Login";
 import AddRide from "./pages/AddRide";
+import ScheduledRide from "./pages/ScheduledRide";
+import Rides from "./Rides";
 
 const App = () => {
   const theme = {
@@ -45,11 +47,12 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/rides" element={<Rides/>} />
           <Route path="/service" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/addride" element={<AddRide/>} />
+          <Route path="/scheduledride" element={<ScheduledRide/>} />
 
 
           {/* <Route path="/user" element={<Privateroute />} >
