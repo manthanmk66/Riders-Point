@@ -7,23 +7,28 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.demo.Dto.RpDetailDTO;
 import com.demo.Model.Pillion_Status;
 import com.demo.Model.Pillion_route_details;
 import com.demo.Model.RpDetails;
 import com.demo.Service.PillionService;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
+@JsonDeserialize
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/pillion")
 public class PillionController {
 	@Autowired
 	private PillionService pservice;
+	
 	
 	@GetMapping("/getAll")
 	public ResponseEntity<List<RpDetails>> displayAll(){
@@ -70,8 +75,17 @@ public class PillionController {
 		}
 	}
 	
-
 	
+	@GetMapping("/getPillion/{id}")
+	public ResponseEntity<RpDetailDTO> getPillion(@PathVariable String id){
+		//post man ---->select-->form data
+		RpDetailDTO p = pservice.getPillionById(id);
+		if(p != null) {
+			return ResponseEntity.ok(p);
+		}else {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		}
+	}
 	
 
 }
