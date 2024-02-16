@@ -2,9 +2,9 @@ package com.demo.Service;
 
 import java.util.List;
 
-import com.demo.Dto.Pillion_Status_Dto;
-import com.demo.Dto.Pillion_route_details_Dto;
-import com.demo.Dto.RpDetailDTO;
+import com.demo.dto.Pillion_Status_Dto;
+import com.demo.dto.Pillion_route_details_Dto;
+import com.demo.dto.RpDetailDTO;
 import com.demo.Model.Pillion_Status;
 import com.demo.Model.Pillion_route_details;
 import com.demo.Model.RpDetails;
