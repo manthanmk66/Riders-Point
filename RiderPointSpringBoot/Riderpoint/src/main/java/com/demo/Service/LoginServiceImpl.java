@@ -41,6 +41,10 @@ public class LoginServiceImpl implements LoginService {
 	public RpDetails addRider(RpDetails rpdetalis) {
 		return rp_details_dao.save(rpdetalis);
 	}
+	@Override
+	public Login addLogDetails(Login login) {
+		return pdao.save(login);
+	}
 	
 	
 	

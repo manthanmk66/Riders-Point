@@ -30,6 +30,11 @@ public class LoginController {
 		Login user= serv.validUser(login.getUsername(), login.getPassword());
 		System.out.println(user.getUsername()+user.getPassword());
 	}
+	@GetMapping("/addLoginDetails")
+	public void addLogDetails(@RequestBody Login login){
+		Login user= serv.addLogDetails(login);
+		System.out.println(user.getUsername()+user.getPassword());
+	}
 	@GetMapping("/Getall")
 	public List<RpDetails> displayAll(){
 		return serv.getAll();

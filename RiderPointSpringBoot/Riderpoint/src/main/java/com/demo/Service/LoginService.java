@@ -15,4 +15,6 @@ public interface LoginService {
 
 	RpDetails addRider(RpDetails rpdetalis);
 
+	Login addLogDetails(Login login);
+
 }
