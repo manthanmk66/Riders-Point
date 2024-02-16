@@ -15,5 +15,8 @@ public interface Dao extends JpaRepository<Login, Integer>{
 	@Query(value = "select * from Login where username=:uname and password=:pass",nativeQuery = true)
 	Login getValidUser(String uname, String pass);
 
+	@Query(value = "select * from Login where username=:uname",nativeQuery = true)
+	Login IsUnamePresent(String uname);
+
 }
 

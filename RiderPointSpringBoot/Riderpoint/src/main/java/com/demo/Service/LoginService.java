@@ -17,4 +17,6 @@ public interface LoginService {
 
 	Login addLogDetails(Login login);
 
+	Login isPresent(String username);
+
 }

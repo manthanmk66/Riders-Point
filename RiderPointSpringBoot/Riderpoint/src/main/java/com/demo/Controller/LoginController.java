@@ -31,9 +31,16 @@ public class LoginController {
 		System.out.println(user.getUsername()+user.getPassword());
 	}
 	@GetMapping("/addLoginDetails")
-	public void addLogDetails(@RequestBody Login login){
+	public String addLogDetails(@RequestBody Login login){
+		Login isPresent=serv.isPresent(login.getUsername()); 
+		if(isPresent!=null) {
+			return "username already present";
+		}
+		else {
 		Login user= serv.addLogDetails(login);
 		System.out.println(user.getUsername()+user.getPassword());
+		return "Data added...";
+		}
 	}
 	@GetMapping("/Getall")
 	public List<RpDetails> displayAll(){
