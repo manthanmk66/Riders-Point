@@ -28,4 +28,10 @@ public interface PillionService {
 
 	RpDetails updatePillion(RpDetails pillion);
 
+	Pillion_Status editStatus(Pillion_Status psstatus);
+
+	Pillion_route_details editPillionRoute(Pillion_route_details proute);
+
+	
+
 }

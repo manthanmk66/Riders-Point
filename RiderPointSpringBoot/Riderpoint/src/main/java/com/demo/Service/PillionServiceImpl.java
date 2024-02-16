@@ -77,4 +77,14 @@ public class PillionServiceImpl implements PillionService {
 		return rp_details_dao.save(pillion);
 	}
 
+	@Override
+	public Pillion_Status editStatus(Pillion_Status psstatus) {
+		return ps_dao.save(psstatus);
+	}
+
+	@Override
+	public Pillion_route_details editPillionRoute(Pillion_route_details proute) {
+		return prd_dao.save(proute);
+	}
+
 }

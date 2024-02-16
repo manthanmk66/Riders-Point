@@ -20,6 +20,8 @@ import com.demo.Dto.Pillion_route_details_Dto;
 import com.demo.Dto.RpDetailDTO;
 import com.demo.Model.Pillion_Status;
 import com.demo.Model.Pillion_route_details;
+import com.demo.Model.Rider_Status;
+import com.demo.Model.Rider_route_details;
 import com.demo.Model.RpDetails;
 import com.demo.Service.PillionService;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -119,6 +121,32 @@ public class PillionController {
 		else
 		{
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		}
+	}
+	
+	@PutMapping("/editStatus")
+	public ResponseEntity<Pillion_Status> editStatus(@RequestBody Pillion_Status psstatus){
+		
+		Pillion_Status ps= pservice.editStatus(psstatus);
+		if(ps!=null)
+		{
+			return ResponseEntity.ok(ps);
+		}
+		else
+		{
+			return ResponseEntity.status(HttpStatus.NOT_MODIFIED).build();
+		}
+	}
+	@PutMapping("/editPillionRoute")
+	public ResponseEntity<Pillion_route_details> editRiderRoute(@RequestBody Pillion_route_details proute){
+		Pillion_route_details prd = pservice.editPillionRoute(proute);
+		if(prd!=null)
+		{
+			return ResponseEntity.ok(prd);
+		}
+		else
+		{
+			return ResponseEntity.status(HttpStatus.NOT_MODIFIED).build();
 		}
 	}
 	
