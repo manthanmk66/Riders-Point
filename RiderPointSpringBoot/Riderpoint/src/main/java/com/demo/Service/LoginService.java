@@ -24,6 +24,6 @@ public interface LoginService extends UserDetailsService{
 
 	Login addLogDetails(Login login);
 
-	Login isPresent(String username);
+	
 
 }

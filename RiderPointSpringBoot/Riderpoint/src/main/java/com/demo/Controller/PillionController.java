@@ -151,12 +151,33 @@ public class PillionController {
 		}
 	}
 	
-	@DeleteMapping("/deletePillionByid/{id}")
+	@DeleteMapping("/deletePillionById/{id}")
 	public ResponseEntity<String> deletePillionbyid(@PathVariable String id){
 		//post man ---->select-->form data
 		boolean status = pservice.deletePillionById(id);
 		if(status) {
 			return ResponseEntity.ok("Pillion Data Deleted Successfully!");
+		}else{
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		}
+	}
+	
+	@DeleteMapping("/deleteStatusById/{status_id}")
+	public ResponseEntity<String> deleteStatusbyid(@PathVariable String status_id){
+		boolean status = pservice.deleteStatusById(status_id);
+		if(status) {
+			return ResponseEntity.ok("Status Data Deleted Successfully!");
+		}else{
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		}
+	}
+	
+	
+	@DeleteMapping("/deleteRouteById/{route_id}")
+	public ResponseEntity<String> deletePillionRoute(@PathVariable String route_id){
+		boolean status = pservice.deletePillionRouteById(route_id);
+		if(status) {
+			return ResponseEntity.ok("Route Deleted Successfully!");
 		}else{
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}

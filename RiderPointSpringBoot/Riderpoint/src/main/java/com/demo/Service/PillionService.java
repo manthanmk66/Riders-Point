@@ -34,6 +34,10 @@ public interface PillionService {
 
 	boolean deletePillionById(String id);
 
+	boolean deleteStatusById(String status_id);
+
+	boolean deletePillionRouteById(String route_id);
+
 	
 
 }
