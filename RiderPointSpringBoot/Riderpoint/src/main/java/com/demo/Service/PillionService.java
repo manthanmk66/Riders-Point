@@ -32,6 +32,8 @@ public interface PillionService {
 
 	Pillion_route_details editPillionRoute(Pillion_route_details proute);
 
+	boolean deletePillionById(String id);
+
 	
 
 }

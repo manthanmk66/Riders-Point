@@ -87,4 +87,14 @@ public class PillionServiceImpl implements PillionService {
 		return prd_dao.save(proute);
 	}
 
+	@Override
+	public boolean deletePillionById(String id) {
+		int pid=Integer.parseInt(id);
+		if(rp_details_dao.existsById(pid)) {
+			rp_details_dao.deleteById(pid);
+			return true;
+		}
+		return false;
+	}
+
 }
