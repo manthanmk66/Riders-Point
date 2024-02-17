@@ -15,21 +15,20 @@ const Login = () => {
       "username":email,
       "password":password
     };
+      
     axios.post(base_url+'/auth/login',body).then(result=>{
       console.log(result.data);
-    })
-    try {
-      // Example toast for successful login
+      localStorage.setItem("token",result.data.token)
       toast.success('Login Successfully', {
         position: 'top-center'
       });
-    } catch (error) {
-      // If login fails, handle the error
-      console.error('Login failed:', error);
+    }).catch(e=>{
+      console.error('Login failed:', e);
       toast.error('Invalid email or password', {
         position: 'top-center'
       });
-    }
+    })
+      
   };
   
 
