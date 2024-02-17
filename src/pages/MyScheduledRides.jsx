@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 import Ride from './Ride';
 import base_url from '../api/bootapi';
 import axios from "axios";
+import MyRide from './MyRide';
 
 
 
@@ -48,19 +49,33 @@ const[ride,setRide]=useState([
     end_point: 'Point D',
     travel_date: '2024-02-20',
    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+},
+{
+  route_id: 2,
+  start_point: 'Point c',
+  end_point: 'Point D',
+  travel_date: '2024-02-20',
+ description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+},
+{
+  route_id: 2,
+  start_point: 'Point c',
+  end_point: 'Point D',
+  travel_date: '2024-02-20',
+ description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
 }
 ]);
 
 
   return(
-    <div className='font-serif text-6xl  justify-center mb-60   pb-2 pt-2  mt-2  '>
-    <p>All Rides</p> 
-    <p>List of My Rides As Follows</p>
+    <div className='font-serif text-6xl  justify-center mb-60   pb-2 pt-2  mt-10  '>
+    <p className=' flex justify-center text-black '>All Rides</p> 
+    <p className='flex justify-center  text-black'>List of My Rides As Follows</p>
   
 
     {
       ride.length > 0
-      ? ride.map((item)=><Ride ride={item}/>):"No Rides"
+      ? ride.map((item)=><MyRide myride={item}/>):"No Rides"
       
     }
 

@@ -51,9 +51,9 @@ const[ride,setRide]=useState([
 
 
   return(
-    <div className='font-serif text-6xl  justify-center mb-60   pb-2 pt-2  mt-2  '>
-    <p>All Rides</p> 
-    <p>List of Rides As Follows</p>
+    <div className='font-serif justify-center mb-60 pb-2 pt-2 mt-2 '>
+    <p className='flex justify-center text-black'>All Rides</p> 
+    <p className='flex justify-center text-black'>List of Rides As Follows</p>
   
 
     {
