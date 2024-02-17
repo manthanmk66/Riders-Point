@@ -46,7 +46,7 @@ const RideStatus = () => {
 
 
   return (
-    <div className="container mx-auto p-96 text-3xl flex-row font-roboto">
+    <div className="container mx-auto p-96 text-2xl flex-row font-roboto">
         <ToastContainer /> 
          <form className="max-w-lg mx-auto" onSubmit={handleSubmit}>
            <div className="mb-4">
@@ -72,7 +72,7 @@ const RideStatus = () => {
     
           <div className="mb-4">
              <label htmlFor="date" className="block text-gray-700 font-bold mb-2">Driving Licence</label>
-             <input type="date" id="Licence" name="Licence" onChange={(e)=>{
+             <input type="text" id="Licence" name="Licence" onChange={(e)=>{
                setRidestatus({ ...ridestatus,Licence:e.target.value});
              }} 
             

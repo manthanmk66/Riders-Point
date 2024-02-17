@@ -49,7 +49,7 @@ const AddRide = () => {
 
   return (
     
-    <div className="container mx-auto p-96 text-3xl flex-row font-roboto">
+    <div className="container mx-auto p-96 text-2xl flex-row font-roboto py-36">
       <ToastContainer /> 
       <form className="max-w-lg mx-auto" onSubmit={handleSubmit}>
         <div className="mb-4">
