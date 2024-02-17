@@ -6,9 +6,6 @@ import Contact from "./Contact";
 import About from "./Rides";
 
 const Home = () => {
-  const { updateHomePage } = useGlobalContext();
-
-  useEffect(() => updateHomePage(), []);
 
   return (
     <>

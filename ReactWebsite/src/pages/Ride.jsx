@@ -18,10 +18,18 @@ const Ride = ({ ride }) => {
           <p className="mb-2"><span className="text-gray-600">Description:</span> {ride.description}</p>
         </div>
       </div>
-      <button className='text-3xl border border-gray-400 px-4 py-2 rounded-lg mt-4 lg:mt-0 bg-black text-white'>Join</button>
+      <div className="flex items-center mt-4">
+        <button className='text-3xl border border-gray-400 px-4 py-2 rounded-lg bg-ebd9b4 text-black mr-2'>Join</button>
+        {/* <button className='text-3xl border border-gray-400 px-4 py-2 rounded-lg bg-9dbc98 text-black mr-2'>Edit</button>
+        <button className='text-3xl border border-gray-400 px-4 py-2 rounded-lg bg-638889 text-black'>Update</button> */}
+      </div>
     </div>
   );
 };
+
+export default Ride;
+
+
 
 
 
@@ -59,10 +67,4 @@ const Ride = ({ ride }) => {
 //     </div>
    
 
-
-
-
-    
-
-
-export default Ride
+// export default Ride
