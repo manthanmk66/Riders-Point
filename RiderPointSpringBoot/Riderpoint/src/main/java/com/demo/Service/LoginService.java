@@ -23,7 +23,4 @@ public interface LoginService extends UserDetailsService{
 	Login addUser(Login userInfo);
 
 	Login addLogDetails(Login login);
-
-	
-
 }

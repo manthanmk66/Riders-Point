@@ -19,14 +19,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.demo.Dto.LoginResponse;
+import com.demo.Dto.RegisterResponse;
+import com.demo.Dto.RegsiterRequest;
 import com.demo.Model.Login;
 import com.demo.Model.RpDetails;
 import com.demo.Service.JwtService;
 import com.demo.Service.LoginService;
 import com.demo.config.UserInfoDetails;
-import com.demo.dto.LoginResponse;
-import com.demo.dto.RegisterResponse;
-import com.demo.dto.RegsiterRequest;
 
 @RestController
 @RequestMapping("/auth")

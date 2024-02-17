@@ -1,4 +1,4 @@
-package com.demo.dto;
+package com.demo.Dto;
 
 public class BaseResponse {
 private boolean status;
