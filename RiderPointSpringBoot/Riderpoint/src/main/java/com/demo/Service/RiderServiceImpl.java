@@ -2,12 +2,16 @@ package com.demo.Service;
 
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.demo.Dao.Rider_route_Dao;
 import com.demo.Dao.Rider_status_dao;
 import com.demo.Dao.RpDetailsDao;
+import com.demo.Dto.Rider_route_details_Dto;
+import com.demo.Dto.Rider_status_Dto;
+import com.demo.Dto.RpDetailDTO;
 import com.demo.Model.Rider_Status;
 import com.demo.Model.Rider_route_details;
 import com.demo.Model.RpDetails;
@@ -19,7 +23,8 @@ public class RiderServiceImpl implements RiderService{
 	private Rider_route_Dao rp_route_dao;
 	@Autowired
 	private Rider_status_dao rp_status_dao;
-	
+	@Autowired
+	ModelMapper modelMapper;
 	
 	@Override
 	public List<RpDetails> getAll() {
@@ -58,21 +63,24 @@ public class RiderServiceImpl implements RiderService{
 	}
 
 	@Override
-	public RpDetails getRiderbyid(String id) {
-		int newId=Integer.parseInt(id);
-		return rp_details_dao.getById(newId);
+	public RpDetailDTO getRiderbyid(int id) {
+//		int newId=Integer.parseInt(id);
+		RpDetails rp= rp_details_dao.findRiderById(id);
+		return modelMapper.map(rp,RpDetailDTO.class);
 	}
 
 	@Override
-	public Rider_Status getStatusbyid(String id) {
-		int newId=Integer.parseInt(id);
-		return rp_status_dao.getById(newId);
+	public Rider_status_Dto getStatusbyid(int id) {
+//		int newId=Integer.parseInt(id);
+		Rider_Status rp= rp_status_dao.findStatusById(id);
+		return modelMapper.map(rp,Rider_status_Dto.class);
 	}
 
 	@Override
-	public Rider_route_details getRoutebyid(String id) {
+	public Rider_route_details_Dto getRoutebyid(String id) {
 		int newId=Integer.parseInt(id);
-		return rp_route_dao.getById(newId);
+		Rider_route_details rp= rp_route_dao.findRoutebyid(newId);
+		return modelMapper.map(rp,Rider_route_details_Dto.class);
 	}
 
 	
@@ -80,7 +88,7 @@ public class RiderServiceImpl implements RiderService{
 	@Override
 	public void deleteRiderbyid(String id) {
 		int newId=Integer.parseInt(id);
-		 rp_details_dao.deleteById(newId);;
+		 rp_details_dao.deleteById(newId);
 	}
 
 	@Override

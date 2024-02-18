@@ -26,7 +26,7 @@ drop table if exists  loginrider;
 
 
 	 insert into rp_details values(1,"Rohit","6552355","pune","no","Rider");
-	 insert into rp_details(name,mobile_no,address,alert,mode) values("varadraj","45552355","pune","no","Rider");
+	 insert into rp_details(name,mobile,address,alert,mode) values("varadraj","45552355","pune","no","Rider");
 
 
 	insert into status_rider values(1,1,"Fz","2000");

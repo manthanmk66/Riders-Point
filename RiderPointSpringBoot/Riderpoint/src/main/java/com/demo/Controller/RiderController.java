@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.demo.Dto.Rider_route_details_Dto;
+import com.demo.Dto.Rider_status_Dto;
+import com.demo.Dto.RpDetailDTO;
 import com.demo.Model.Login;
 import com.demo.Model.Rider_Status;
 import com.demo.Model.Rider_route_details;
@@ -74,19 +77,18 @@ public class RiderController {
 	
 	// All ID operation
 	@GetMapping("/getRiderByid/{id}")
-	public RpDetails getRiderbyid(@PathVariable String id){
-		//post man ---->select-->form data
+	public RpDetailDTO getRiderbyid(@PathVariable int id){
+		System.out.println("asdfa");
 		return serv.getRiderbyid(id);
+		
 	}
 	@GetMapping("/getStatusByid/{status_id}")
-	public Rider_Status getStatusbyid(@PathVariable String id){
-		//post man ---->select-->form data
-		return serv.getStatusbyid(id);
+	public Rider_status_Dto getStatusbyid(@PathVariable int status_id){
+		return serv.getStatusbyid(status_id);
 	}
 	@GetMapping("/getRouteByid/{route_id}")
-	public Rider_route_details getRoutebyid(@PathVariable String id){
-		//post man ---->select-->form data
-		return serv.getRoutebyid(id);
+	public Rider_route_details_Dto getRoutebyid(@PathVariable String route_id){
+		return serv.getRoutebyid(route_id);
 	}	
 	
 	// All Update operation
@@ -130,19 +132,18 @@ public class RiderController {
 		}
 	}
 	
-	@DeleteMapping("/deleteRiderByid/{id}")
+	@DeleteMapping("/deleteRiderByid/id/{id}")
 	public String deleteRiderbyid(@PathVariable String id){
-		//post man ---->select-->form data
+		System.out.println("sdf");
 		serv.deleteRiderbyid(id);
 		return "Deleted...";
 	}
-	@DeleteMapping("/deleteStatusByid/{status_id}")
+	@DeleteMapping("/deleteStatusByid/status_id/{status_id}")
 	public String deleteStatusbyid(@PathVariable String status_id){
-		//post man ---->select-->form data
 		serv.deleteStatusbyid(status_id);
 		return "Deleted...";
 	}
-	@DeleteMapping("/deleteRiderByid/{route_id}")
+	@DeleteMapping("/deleteRiderByid/route_id/{route_id}")
 	public String deleteRiderRoute(@PathVariable String route_id){
 		serv.deleteRiderRoute(route_id);
 		return "Deleted...";

@@ -12,7 +12,6 @@ import org.hibernate.annotations.CascadeType;
 public class RpDetails {
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		@Cascade(CascadeType.DELETE)
 		private int id ;
 		private String name;
 		private String mobile;

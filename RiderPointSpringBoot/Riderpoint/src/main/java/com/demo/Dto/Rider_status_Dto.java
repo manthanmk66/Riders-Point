@@ -1,34 +1,21 @@
-package com.demo.Model;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.CascadeType;
+package com.demo.Dto;
 
 
 
-@Entity
-public class Rider_Status {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
+import com.demo.Model.RpDetails;
+
+public class Rider_status_Dto {
 	private int status_id;
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="rp_id")
 	private RpDetails rp_id ;
 	private String bike;
 	private Double expense;
 	private String license ;
 	private Boolean wantPillion;
 	
-	public Rider_Status() {
+	public Rider_status_Dto() {
 		super();
 	}
-	public Rider_Status(int status_id, RpDetails rp_id, String bike, Double expense, String license,
+	public Rider_status_Dto(int status_id, RpDetails rp_id, String bike, Double expense, String license,
 			Boolean wantPillion) {
 		super();
 		this.status_id = status_id;
@@ -79,8 +66,4 @@ public class Rider_Status {
 		return "Rider_Status [status_id=" + status_id + ", rp_id=" + rp_id + ", bike=" + bike + ", expense=" + expense
 				+ ", license=" + license + ", wantPillion=" + wantPillion + "]";
 	}
-	
-	
-	
-	
 }

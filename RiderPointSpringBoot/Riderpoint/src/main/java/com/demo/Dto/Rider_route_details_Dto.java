@@ -1,24 +1,15 @@
-package com.demo.Model;
+package com.demo.Dto;
 
 import java.time.LocalTime;
 import java.util.Date;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
-@Entity
-public class Rider_route_details {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+import com.demo.Model.Rider_Status;
+
+public class Rider_route_details_Dto {
+	
 	 private int route_id ;
-	 @OneToOne(cascade = CascadeType.ALL)
-	 @JoinColumn(name="status_id")
 	 private Rider_Status status_id  ;
 	 private String start_point; 
 	 private String end_point  ; 
@@ -28,12 +19,12 @@ public class Rider_route_details {
 	 private String description;
 	 
 	 
-	public Rider_route_details() {
+	public Rider_route_details_Dto() {
 		super();
 	}
 
 
-	public Rider_route_details(int route_id, Rider_Status status_id, String start_point, String end_point, Date travel_date,
+	public Rider_route_details_Dto(int route_id, Rider_Status status_id, String start_point, String end_point, Date travel_date,
 			LocalTime start_time, LocalTime end_time, String description) {
 		super();
 		this.route_id = route_id;
@@ -133,6 +124,4 @@ public class Rider_route_details {
 				+ ", end_point=" + end_point + ", travel_date=" + travel_date + ", start_time=" + start_time
 				+ ", end_time=" + end_time + ", description=" + description + "]";
 	}
-	 
-	 
 }
