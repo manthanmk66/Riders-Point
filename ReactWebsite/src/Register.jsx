@@ -1,9 +1,10 @@
+
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
-import base_url from '../src/api/bootapi';
 import { useNavigate } from 'react-router-dom';
+import base_url from './api/bootapi';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -12,34 +13,36 @@ const Register = () => {
     password: '',
     address: '',
     mobile: '',
-    mode: '' // For radio button selection
+    mode: ''
   });
+
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    console.log(formData);
-    postDataToServer(formData);
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+  
+    axios.post(base_url+'/auth/register',formData).then(result=>{
+      console.log(result.data);
+      localStorage.setItem("token",result.data.token)
+      toast.success('Account Registration successful! Please login.', {
+        position: 'top-center'
+      });
+    }).catch(e=>{
+      console.error('failed:', e);
+      toast.error('Registration failed. Please try again later.', {
+        position: 'top-center'
+      });
+    })
   };
 
-  //Creating function to post data on server
-  const postDataToServer = (data) => {
-    axios.post(`${base_url}/register`, data).then(
-      (response) => {
-        console.log(response);
-        console.log("success");
-        toast.success('Registration successful!', {
-          position: 'top-center'
-        });
-        navigate('/login'); // Redirect to login page after successful registration
-      },
-      (error) => {
-        console.log(error);
-        console.log("error");
-        toast.error("Something went wrong. Please try again later.");
-      }
-    )
-  }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
 
   return (
     <div className="container mx-auto p-8 text-2xl">
@@ -157,4 +160,6 @@ const Register = () => {
   );
 };
 
+
 export default Register;
+

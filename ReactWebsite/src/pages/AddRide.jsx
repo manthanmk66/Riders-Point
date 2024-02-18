@@ -3,49 +3,42 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import base_url from '../api/bootapi';
-import { useNavigate } from 'react-router-dom';
+
 
 const AddRide = () => {
 
-  const [rides,setRides]=useState({});
-
-  const navigate = useNavigate();
-
-  const handleSubmit = (e) => {
-    
-    console.log(rides);
-    postDataToServer(rides);
-    e.preventDefault();
-
-    
-
-
-  };
-
+  const [rides,setRides]=useState({
+    from: '',
+    to: '',
+    date: '',
+    starttime: '',
+    endtime: '',
+    mobno: ''
+  });
 
   //Creating function to post data on server
 
-  const postDataToServer = (data) => {
-    axios.post(`${base_url}/rides`,data).then(
-      (response)=>{
-        console.log(response);
-        console.log("success");
-        toast.success('Ride successfully added!', {
-          position: 'top-center'   
-        });
-        navigate('/MyScheduledRides');
+  const handleSubmit = async (e) => {
+    console.log(rides);
+    e.preventDefault();
 
 
-      },
-      (error)=>{
-        console.log(error);
-        console.log("error");
-        toast.error("Something Went Wrong");
-
-      }
-    )
-
-  }
+  axios.post(base_url+'/ride/addRiderRoute',rides).then(result=>{
+    console.log(result.data);
+    localStorage.setItem("token",result.data.token)
+   
+    toast.success('Added Ride Status.', {
+      position: 'top-center'
+    });
+    
+    
+  }).catch(e=>{
+    console.error('failed:', e);
+    toast.error('Something Went Wrong.', {
+      position: 'top-center'
+    });
+  })
+};
 
   return (
     
@@ -115,7 +108,7 @@ const AddRide = () => {
         </div>
 
 
-        <button type="reset" onClick={handleSubmit} className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+        <button type="submit"  className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
           Add Ride
         </button>
       </form>

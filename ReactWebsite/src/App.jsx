@@ -22,6 +22,7 @@ import MyScheduledRides from "./pages/MyScheduledRides";
 import axios from "axios";
 import { useEffect } from "react";
 
+
 const App = () => {
   const theme = {
     colors: {
@@ -73,14 +74,16 @@ const App = () => {
           <Route path="/service" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
-
-          <Route path="/user" element={<Privateroute />} >
-
           <Route path="/addride" element={<AddRide/>} />
           <Route path="/scheduledride" element={<ScheduledRide/>} />
           <Route path="/myscheduledride" element={<MyScheduledRides/>} />
           <Route path="/ridestatus" element={<RideStatus/>} />
-          </Route>
+          {/* <Route path="/popup" element={<Popup/>} /> */}
+
+          {/* <Route path="/user" element={<Privateroute />} >
+
+
+          </Route> */}
 
           <Route path="/events" element={<Events />} />
           <Route path="/register" element={<Register />} />
