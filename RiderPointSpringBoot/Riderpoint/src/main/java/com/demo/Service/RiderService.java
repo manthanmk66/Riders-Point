@@ -2,6 +2,10 @@ package com.demo.Service;
 
 import java.util.List;
 
+
+import com.demo.Dto.RpDetailDTO;
+import com.demo.Dto.Rider_route_details_Dto;
+import com.demo.Dto.Rider_status_Dto;
 import com.demo.Model.Rider_Status;
 import com.demo.Model.Rider_route_details;
 import com.demo.Model.RpDetails;
@@ -23,11 +27,11 @@ public interface RiderService {
 
 	Rider_route_details editRiderRoute(Rider_route_details rroute);
 
-	RpDetails getRiderbyid(String id);
+	RpDetailDTO getRiderbyid(int id);
 
-	Rider_Status getStatusbyid(String id);
+	Rider_status_Dto getStatusbyid(int id);
 
-	Rider_route_details getRoutebyid(String id);
+	Rider_route_details_Dto getRoutebyid(String id);
 
 	void deleteRiderbyid(String id);
 

@@ -1,0 +1,6 @@
+insert into rp_details values(1,"pune","no","6552355","Rider","Rohit");
+insert into rp_details values(2,"pune","no","4442355","Rider","varadraj");
+
+insert into rider_status values(1,"Fz",2000,"mh1022222",1,1);
+
+insert into rider_route_details values(1,"we are going to enjoy the ride","lonavala","1:30","wakad","10:30","2024-02-19",1);
