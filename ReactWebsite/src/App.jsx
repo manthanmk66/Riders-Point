@@ -21,6 +21,7 @@ import RideStatus from "./pages/RideStatus";
 import MyScheduledRides from "./pages/MyScheduledRides";
 import axios from "axios";
 import { useEffect } from "react";
+import EditMyRide from "./pages/EditMyRide";
 
 
 const App = () => {
@@ -78,6 +79,7 @@ const App = () => {
           <Route path="/scheduledride" element={<ScheduledRide/>} />
           <Route path="/myscheduledride" element={<MyScheduledRides/>} />
           <Route path="/ridestatus" element={<RideStatus/>} />
+          <Route path="/editmyride" element={<EditMyRide/>} />
           {/* <Route path="/popup" element={<Popup/>} /> */}
 
           {/* <Route path="/user" element={<Privateroute />} >

@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import base_url from '../api/bootapi';
 
-
-const AddRide = () => {
-
-  const [rides,setRides]=useState({
+const EditMyRide = () => {
+  const { id } = useParams(); 
+  const [ride, setRide] = useState({
     from: '',
     to: '',
     date: '',
@@ -16,29 +16,39 @@ const AddRide = () => {
     mobno: ''
   });
 
-  //Creating function to post data on server
+  useEffect(() => {
+
+    axios.get(`${base_url}/Rider/getRiderRoute/${id}`)
+      .then(response => {
+        setRide(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching ride data:', error);
+      });
+  }, [id]);
 
   const handleSubmit = async (e) => {
-    console.log(rides);
     e.preventDefault();
 
+//     axios.put(`${base_url}/Rider/updateRiderRoute/${id}`, ride)
+//       .then(result => {
+//         console.log(result.data);
+//         toast.success('Ride details updated.', {
+//           position: 'top-center'
+//         });
+//       })
+//       .catch(e => {
+//         console.error('failed:', e);
+//         toast.error('Something went wrong.', {
+//           position: 'top-center'
+//         });
+//       });
+  };
 
-  axios.post(base_url+'/Rider/addRiderRoute',rides).then(result=>{
-    console.log(result.data);
-    localStorage.setItem("token",result.data.token)
-   
-    toast.success('Added Ride Status.', {
-      position: 'top-center'
-    });
-    
-    
-  }).catch(e=>{
-    console.error('failed:', e);
-    toast.error('Something Went Wrong.', {
-      position: 'top-center'
-    });
-  })
-};
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setRide({ ...ride, [name]: value });
+  };
 
   return (
     
@@ -48,7 +58,7 @@ const AddRide = () => {
         <div className="mb-4">
           <label htmlFor="from" className="block text-gray-700  font-bold mb-2">From</label>
           <input type="text" id="from" name="from" onChange={(e)=>{
-            setRides({ ...rides,from:e.target.value});
+            setRide({ ...ride,from:e.target.value});
           }}
            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-indigo-500" />
         </div>
@@ -58,7 +68,7 @@ const AddRide = () => {
         <div className="mb-4">
           <label htmlFor="to" className="block text-gray-700 font-bold mb-2">To</label>
           <input type="text" id="to" name="to"onChange={(e)=>{
-            setRides({ ...rides,to:e.target.value});
+            setRide({ ...ride,to:e.target.value});
           }} 
            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-indigo-500" 
            />
@@ -69,7 +79,7 @@ const AddRide = () => {
         <div className="mb-4">
           <label htmlFor="date" className="block text-gray-700 font-bold mb-2">Date</label>
           <input type="date" id="date" name="date" onChange={(e)=>{
-            setRides({ ...rides,date:e.target.value});
+            setRide({ ...ride,date:e.target.value});
           }} 
           
           className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-indigo-500" />
@@ -80,7 +90,7 @@ const AddRide = () => {
         <div className="mb-4">
           <label htmlFor="starttime" className="block text-gray-700 font-bold mb-2">Starting Time</label>
           <input type="time" id="starttime" name="starttime" onChange={(e)=>{
-            setRides({ ...rides,starttime:e.target.value});
+            setRide({ ...ride,starttime:e.target.value});
           }} 
           
           className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-indigo-500" />
@@ -91,7 +101,7 @@ const AddRide = () => {
         <div className="mb-4">
           <label htmlFor="endtime" className="block text-gray-700 font-bold mb-2">Ending Time</label>
           <input type="time" id="endtime" name="endtime" onChange={(e)=>{
-            setRides({ ...rides,endtime:e.target.value});
+            setRide({ ...ride,endtime:e.target.value});
           }} 
           
           className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-indigo-500" />
@@ -101,7 +111,7 @@ const AddRide = () => {
         <div className="mb-4">
           <label htmlFor="mobno" className="block text-gray-700 font-bold mb-2">Mobile Number</label>
           <input type="number" id="mobno" name="mobno" onChange={(e)=>{
-            setRides({ ...rides,mobno:e.target.value});
+            setRide({ ...ride,mobno:e.target.value});
           }} 
           
           className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-indigo-500" />
@@ -109,11 +119,11 @@ const AddRide = () => {
 
 
         <button type="submit"  className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-          Add Ride
+          update
         </button>
       </form>
     </div>
   );
 };
 
-export default AddRide;
+export default EditMyRide;
