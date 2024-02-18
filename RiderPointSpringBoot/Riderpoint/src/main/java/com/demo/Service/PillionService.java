@@ -28,4 +28,16 @@ public interface PillionService {
 
 	RpDetails updatePillion(RpDetails pillion);
 
+	Pillion_Status editStatus(Pillion_Status psstatus);
+
+	Pillion_route_details editPillionRoute(Pillion_route_details proute);
+
+	boolean deletePillionById(String id);
+
+	boolean deleteStatusById(String status_id);
+
+	boolean deletePillionRouteById(String route_id);
+
+	
+
 }

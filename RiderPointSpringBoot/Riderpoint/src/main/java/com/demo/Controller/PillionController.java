@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +21,8 @@ import com.demo.Dto.Pillion_route_details_Dto;
 import com.demo.Dto.RpDetailDTO;
 import com.demo.Model.Pillion_Status;
 import com.demo.Model.Pillion_route_details;
+import com.demo.Model.Rider_Status;
+import com.demo.Model.Rider_route_details;
 import com.demo.Model.RpDetails;
 import com.demo.Service.PillionService;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -118,6 +121,64 @@ public class PillionController {
 		}
 		else
 		{
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		}
+	}
+	
+	@PutMapping("/editStatus")
+	public ResponseEntity<Pillion_Status> editStatus(@RequestBody Pillion_Status psstatus){
+		
+		Pillion_Status ps= pservice.editStatus(psstatus);
+		if(ps!=null)
+		{
+			return ResponseEntity.ok(ps);
+		}
+		else
+		{
+			return ResponseEntity.status(HttpStatus.NOT_MODIFIED).build();
+		}
+	}
+	@PutMapping("/editPillionRoute")
+	public ResponseEntity<Pillion_route_details> editRiderRoute(@RequestBody Pillion_route_details proute){
+		Pillion_route_details prd = pservice.editPillionRoute(proute);
+		if(prd!=null)
+		{
+			return ResponseEntity.ok(prd);
+		}
+		else
+		{
+			return ResponseEntity.status(HttpStatus.NOT_MODIFIED).build();
+		}
+	}
+	
+	@DeleteMapping("/deletePillionById/{id}")
+	public ResponseEntity<String> deletePillionbyid(@PathVariable String id){
+		//post man ---->select-->form data
+		boolean status = pservice.deletePillionById(id);
+		if(status) {
+			return ResponseEntity.ok("Pillion Data Deleted Successfully!");
+		}else{
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		}
+	}
+	
+	@DeleteMapping("/deleteStatusById/{status_id}")
+	public ResponseEntity<String> deleteStatusbyid(@PathVariable String status_id){
+		boolean status = pservice.deleteStatusById(status_id);
+		if(status) {
+			return ResponseEntity.ok("Status Data Deleted Successfully!");
+		}else{
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		}
+	}
+	
+	
+	@DeleteMapping("/deleteRouteById/{route_id}")
+	public ResponseEntity<String> deletePillionRoute(@PathVariable String route_id){
+		boolean status = pservice.deletePillionRouteById(route_id);
+		if(status) {
+			return ResponseEntity.ok("Route Deleted Successfully!");
+		}else{
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
 	}

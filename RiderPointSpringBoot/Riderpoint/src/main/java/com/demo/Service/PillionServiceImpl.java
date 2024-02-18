@@ -77,4 +77,44 @@ public class PillionServiceImpl implements PillionService {
 		return rp_details_dao.save(pillion);
 	}
 
+	@Override
+	public Pillion_Status editStatus(Pillion_Status psstatus) {
+		return ps_dao.save(psstatus);
+	}
+
+	@Override
+	public Pillion_route_details editPillionRoute(Pillion_route_details proute) {
+		return prd_dao.save(proute);
+	}
+
+	@Override
+	public boolean deletePillionById(String id) {
+		int pid=Integer.parseInt(id);
+		if(rp_details_dao.existsById(pid)) {
+			rp_details_dao.deleteById(pid);
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean deleteStatusById(String status_id) {
+		int sid=Integer.parseInt(status_id);
+		if(ps_dao.existsById(sid)) {
+			ps_dao.deleteById(sid);
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean deletePillionRouteById(String route_id) {
+		int rid=Integer.parseInt(route_id);
+		if(prd_dao.existsById(rid)) {
+			prd_dao.deleteById(rid);
+			return true;
+		}
+		return false;
+	}
+
 }

@@ -2,21 +2,25 @@ package com.demo.Service;
 
 import java.util.List;
 
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+
 import com.demo.Model.Login;
 import com.demo.Model.RpDetails;
 
 
 
-public interface LoginService {
+public interface LoginService extends UserDetailsService{
 
-	Login validUser(String uname, String pass);
+	Boolean validUser(String uname, String pass);
 
 	List<RpDetails> getAll();
 
 	RpDetails addRider(RpDetails rpdetalis);
+	
+	UserDetails getUserByUserName(String username);
+	
+	Login addUser(Login userInfo);
 
 	Login addLogDetails(Login login);
-
-	Login isPresent(String username);
-
 }

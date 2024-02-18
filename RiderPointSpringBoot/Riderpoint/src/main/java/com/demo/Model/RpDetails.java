@@ -11,7 +11,9 @@ import org.hibernate.annotations.CascadeType;
 @Entity
 public class RpDetails {
 		@Id
+
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 		private int id ;
 		private String name;
 		private String mobile;
