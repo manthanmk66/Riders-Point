@@ -19,6 +19,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Entity
 public class Rider_route_details {
 	@Id
+<<<<<<< HEAD
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int route_id;
 
@@ -34,6 +35,21 @@ public class Rider_route_details {
 	@OneToOne
 	private RpDetails createdBy;
 	
+=======
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	 private int route_id ;
+	 @OneToOne(cascade = CascadeType.ALL)
+	 @JoinColumn(name="status_id")
+	 private Rider_Status status_id  ;
+	 private String start_point; 
+	 private String end_point  ; 
+	 private Date travel_date; 
+	 private LocalTime start_time ; 
+	 private LocalTime end_time   ; 
+	 private String description;
+	 
+	 
+>>>>>>> 0a325a3568ab47e66c93239589d4b2be72d5b7b1
 	public Rider_route_details() {
 		super();
 	}

@@ -2,6 +2,10 @@ package com.demo.Service;
 
 import java.util.List;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0a325a3568ab47e66c93239589d4b2be72d5b7b1
 import com.demo.Dto.RpDetailDTO;
 import com.demo.Dto.Rider_route_details_Dto;
 import com.demo.Dto.Rider_status_Dto;
@@ -27,7 +31,11 @@ public interface RiderService {
 
 	RpDetailDTO getRiderbyid(int id);
 
+<<<<<<< HEAD
 	Rider_Status getStatusbyid(int id);
+=======
+	Rider_status_Dto getStatusbyid(int id);
+>>>>>>> 0a325a3568ab47e66c93239589d4b2be72d5b7b1
 
 	Rider_route_details_Dto getRoutebyid(String id);
 

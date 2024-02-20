@@ -29,7 +29,11 @@ public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
     response.setHeader("Access-Control-Allow-Credentials", "true");
     response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
     response.setHeader("Access-Control-Max-Age", "3600");
+<<<<<<< HEAD
     response.setHeader("Access-Control-Allow-Headers", "*");
+=======
+    response.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With, remember-me");
+>>>>>>> 0a325a3568ab47e66c93239589d4b2be72d5b7b1
 
     chain.doFilter(req, res);
 }

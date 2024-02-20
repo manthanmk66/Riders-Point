@@ -170,27 +170,29 @@
 //   );
 // };
 
-// export default Navbar;
+//export default Navbar;
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { CgMenu, CgCloseR } from "react-icons/cg";
 import logos from "../Assets/logos.png";
 
+
+
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
-    <nav className="py-12 lg:px-10 flex justify-between items-center z-50 font-roboto text-black font-semibold ">
+    <nav className="pt-3 shadow lg:px-10 flex justify-between items-center z-50 font-roboto text-black font-semibold ">
       {/* Logo */}
       <NavLink to="/" className="pt-14" style={{ paddingRight: "80rem"}}>
-        <img src={logos} width={200} height={200} alt="logo" />
+        <img src={logos} width={250} height={250} alt="logo" />
       </NavLink>
 
       {/* Menu Items */}
       <ul className={`lg:flex ${openMenu ? "block" : "hidden"} lg:items-center lg:justify-end gap-6 text-3xl`}>
         <li className="mb-4 lg:mb-0">
           <NavLink
-            className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out"
+            className="text-gray-800 hover:text-gray-600 font-inter transition duration-300 ease-in-out"
             onClick={() => setOpenMenu(false)}
             to="/"
           >
@@ -199,7 +201,7 @@ const Navbar = () => {
         </li>
         <li className="mb-4 lg:mb-0">
           <NavLink
-            className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out"
+            className="text-gray-800 font-inter hover:text-gray-600 transition duration-300 ease-in-out"
             onClick={() => setOpenMenu(false)}
             to="/rides"
           >
@@ -208,7 +210,7 @@ const Navbar = () => {
         </li>
         <li className="mb-4 lg:mb-0">
           <NavLink
-            className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out"
+            className="text-gray-800 font-inter hover:text-gray-600 transition duration-300 ease-in-out"
             onClick={() => setOpenMenu(false)}
             to="/service"
           >
@@ -217,7 +219,7 @@ const Navbar = () => {
         </li>
         <li className="mb-4 lg:mb-0">
           <NavLink
-            className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out"
+            className="text-gray-800 font-inter hover:text-gray-600 transition duration-300 ease-in-out"
             onClick={() => setOpenMenu(false)}
             to="/contact"
           >
@@ -226,7 +228,7 @@ const Navbar = () => {
         </li>
         <li className="mb-4 lg:mb-0">
           <NavLink
-            className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out"
+            className="text-gray-800 font-inter hover:text-gray-600 transition duration-300 ease-in-out"
             onClick={() => setOpenMenu(false)}
             to="/events"
           >
@@ -235,7 +237,8 @@ const Navbar = () => {
         </li>
         <li className="mb-4 lg:mb-0">
           <NavLink
-            className="text-gray-800 hover:text-gray-600 transition duration-300 ease-in-out"
+             className="bg-blue-500  font-interbg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded transition duration-300 ease-in-out"
+          
             onClick={() => setOpenMenu(false)}
             to="/register"
           >
@@ -248,12 +251,12 @@ const Navbar = () => {
       <div className="lg:hidden">
         {!openMenu ? (
           <CgMenu
-            className="text-gray-800 text-3xl cursor-pointer"
+            className="text-gray-800 font-mono text-3xl cursor-pointer"
             onClick={() => setOpenMenu(true)}
           />
         ) : (
           <CgCloseR
-            className="text-gray-800 text-3xl cursor-pointer"
+            className="text-gray-800 font-mono text-3xl cursor-pointer"
             onClick={() => setOpenMenu(false)}
           />
         )}
@@ -261,5 +264,66 @@ const Navbar = () => {
     </nav>
   );
 };
+
+
+// export default Navbar;
+
+
+// import React, { useState } from "react";
+// import { NavLink } from "react-router-dom";
+// import { CgMenu, CgCloseR } from "react-icons/cg";
+// import logos from "../Assets/logos.png";
+
+// const Navbar = () => {
+//   const [openMenu, setOpenMenu] = useState(false);
+
+//   return (
+//     <div>
+//       <nav className="navbar navbar-expand-lg blur blur-rounded top-0 border-bottom z-index-3 shadow w-100 mt-4 d-none d-lg-block my-3 py-2">
+//         <div className="container-fluid">
+//           <a className="navbar-brand font-weight-bolder ms-3" href="" rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom" target="_blank">
+//             Soft UI Design System
+//           </a>
+//           <button className="navbar-toggler" type="button" onClick={() => setOpenMenu(!openMenu)}>
+//             {openMenu ? (
+//               <CgCloseR className="navbar-toggler-icon" />
+//             ) : (
+//               <CgMenu className="navbar-toggler-icon" />
+//             )}
+//           </button>
+//           <div className={`collapse navbar-collapse ${openMenu ? 'show' : ''}`} id="navigation">
+//             <ul className="navbar-nav navbar-nav-hover mx-auto">
+//               <li className="nav-item px-3">
+//                 <a className="nav-link">
+//                   Pages
+//                 </a>
+//               </li>
+//               <li className="nav-item px-3">
+//                 <a className="nav-link">
+//                   Utilities
+//                 </a>
+//               </li>
+//               <li className="nav-item px-3">
+//                 <a className="nav-link">
+//                   Blocks
+//                 </a>
+//               </li>
+//               <li className="nav-item px-3">
+//                 <a className="nav-link">
+//                   Docs
+//                 </a>
+//               </li>
+//             </ul>
+//             <ul className="navbar-nav">
+//               <li className="nav-item">
+//                 <button className="btn btn-sm bg-gradient-dark btn-round mb-0 me-1">Buy Now</button>
+//               </li>
+//             </ul>
+//           </div>
+//         </div>
+//       </nav>
+//     </div>
+//   );
+// };
 
 export default Navbar;

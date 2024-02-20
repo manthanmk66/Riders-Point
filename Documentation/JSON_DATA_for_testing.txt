@@ -6,13 +6,25 @@
 		    "mode":"Pillion"
 		}
 
+
+{           "id":1,
+		    "name":"manthan",
+		    "mobile":"4442355",
+		    "address":"pune",
+		"username":"manthan",
+            "password":"manthan",
+		    "alert":"no",
+		    "mode":"Pillion"
+}
+
 //for the rider status hybernate JSON data insert and "id" is in parent class
 
 { "status_id":2,
     "rp_id":{"id":2},
     "bike":"Kawasaki Ninja",
     "expense":3000
-    
+    "license":"mh10",
+    "wantpillion":"no"
 }
 // login table
 insert into Login(password,username,rp_id) values("manthan","manthan",2);

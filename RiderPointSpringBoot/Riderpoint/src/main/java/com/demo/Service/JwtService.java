@@ -30,7 +30,11 @@ public class JwtService {
 
 	private String createToken(Map<String, Object> claims, String userName) {
 		return Jwts.builder().setClaims(claims).setSubject(userName).setIssuedAt(new Date(System.currentTimeMillis()))
+<<<<<<< HEAD
 				.setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24 * 10 ))
+=======
+				.setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24 * 30))
+>>>>>>> 0a325a3568ab47e66c93239589d4b2be72d5b7b1
 				.signWith(getSignKey(), SignatureAlgorithm.HS256).compact();
 	}
 

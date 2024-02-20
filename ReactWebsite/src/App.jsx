@@ -17,6 +17,12 @@ import AddRide from "./pages/AddRide";
 import ScheduledRide from "./pages/ScheduledRide";
 import Rides from "./Rides";
 import Ride from "./pages/Ride";
+import RideStatus from "./pages/RideStatus";
+import MyScheduledRides from "./pages/MyScheduledRides";
+import axios from "axios";
+import { useEffect } from "react";
+import EditMyRide from "./pages/EditMyRide";
+
 
 const App = () => {
   const theme = {
@@ -40,6 +46,21 @@ const App = () => {
     media: { mobile: "768px", tab: "998px" },
   };
 
+  useEffect(() => {
+    
+    axios.interceptors.request.use((config) => {
+      let token =localStorage.getItem("token");
+      if(token&& !config.url.includes("/auth")){
+      config.headers.Authorization = `Bearer ${token}`;
+      }
+
+      return config;
+  }, (error) => {
+      return Promise.reject(error);
+  });
+  }, [])
+  
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
@@ -56,11 +77,13 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/addride" element={<AddRide/>} />
           <Route path="/scheduledride" element={<ScheduledRide/>} />
-
+          <Route path="/myscheduledride" element={<MyScheduledRides/>} />
+          <Route path="/ridestatus" element={<RideStatus/>} />
+          <Route path="/editmyride" element={<EditMyRide/>} />
+          {/* <Route path="/popup" element={<Popup/>} /> */}
 
           {/* <Route path="/user" element={<Privateroute />} >
 
-          
 
           </Route> */}
 
