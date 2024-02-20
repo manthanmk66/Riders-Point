@@ -106,8 +106,15 @@ const Ride = ({ ride,reloadList,isRouteJoined, isRouteJoinedAsPillon }) => {
           
           <p className="mb-2"><span className="text-gray-600">Travel Date:</span> {ride?.routeDetails?.travel_date}</p>
           <p className="mb-2"><span className="text-gray-600">Mobile_no:</span> {
-            ride.pillon?ride.pillon.id==currentUser.id?ride.pillon.mobile:"":""
+            (ride.pillon&&ride.pillon.id==currentUser.id) || isRouteJoined ?ride.rp_id.mobile:""
           }</p>
+        </div>
+        <div className="flex flex-col">
+          
+          <p className="mb-2"><span className="text-gray-600">Name:</span> {ride?.rp_id?.name}</p>
+          {/*<p className="mb-2"><span className="text-gray-600">Mobile_no:</span> {
+            ride.pillon?ride.pillon.id==currentUser.id?ride.pillon.mobile:"":""
+          }</p>*/}
         </div>
       </div>
       <div className="flex items-center mt-4">
