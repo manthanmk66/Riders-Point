@@ -27,14 +27,10 @@ public class RiderServiceImpl implements RiderService {
 	private Rider_status_dao rp_status_dao;
 	@Autowired
 	ModelMapper modelMapper;
-<<<<<<< HEAD
 
 	@Autowired
 	JwtService jwtService;
 
-=======
-	
->>>>>>> 0a325a3568ab47e66c93239589d4b2be72d5b7b1
 	@Override
 	public List<RpDetails> getAll() {
 		return rp_details_dao.getAllriders();
@@ -74,7 +70,6 @@ public class RiderServiceImpl implements RiderService {
 	@Override
 	public RpDetailDTO getRiderbyid(int id) {
 //		int newId=Integer.parseInt(id);
-<<<<<<< HEAD
 		RpDetails rp = rp_details_dao.findRiderById(id);
 		return modelMapper.map(rp, RpDetailDTO.class);
 	}
@@ -83,41 +78,19 @@ public class RiderServiceImpl implements RiderService {
 	public Rider_Status getStatusbyid(int id) {
 		return rp_status_dao.findById(id).get();
 
-=======
-		RpDetails rp= rp_details_dao.findRiderById(id);
-		return modelMapper.map(rp,RpDetailDTO.class);
-	}
-
-	@Override
-	public Rider_status_Dto getStatusbyid(int id) {
-//		int newId=Integer.parseInt(id);
-		Rider_Status rp= rp_status_dao.findStatusById(id);
-		return modelMapper.map(rp,Rider_status_Dto.class);
->>>>>>> 0a325a3568ab47e66c93239589d4b2be72d5b7b1
 	}
 
 	@Override
 	public Rider_route_details_Dto getRoutebyid(String id) {
-<<<<<<< HEAD
 		int newId = Integer.parseInt(id);
 		Rider_route_details rp = rp_route_dao.findRoutebyid(newId);
 		return modelMapper.map(rp, Rider_route_details_Dto.class);
-=======
-		int newId=Integer.parseInt(id);
-		Rider_route_details rp= rp_route_dao.findRoutebyid(newId);
-		return modelMapper.map(rp,Rider_route_details_Dto.class);
->>>>>>> 0a325a3568ab47e66c93239589d4b2be72d5b7b1
 	}
 
 	@Override
 	public void deleteRiderbyid(String id) {
-<<<<<<< HEAD
 		int newId = Integer.parseInt(id);
 		rp_details_dao.deleteById(newId);
-=======
-		int newId=Integer.parseInt(id);
-		 rp_details_dao.deleteById(newId);
->>>>>>> 0a325a3568ab47e66c93239589d4b2be72d5b7b1
 	}
 
 	@Override

@@ -8,33 +8,19 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-import javax.persistence.CascadeType;
 
-
-<<<<<<< HEAD
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.CascadeType;
-=======
->>>>>>> 0a325a3568ab47e66c93239589d4b2be72d5b7b1
 
 @Entity
 public class Rider_Status {
 	@Id
-<<<<<<< HEAD
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int status_id;
 	@OneToOne
 	@JoinColumn(name = "rp_id")
 	private RpDetails rp_id;
-=======
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
-	private int status_id;
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="rp_id")
-	private RpDetails rp_id ;
->>>>>>> 0a325a3568ab47e66c93239589d4b2be72d5b7b1
 	private String bike;
 	private Double expense;
 	private String license;
