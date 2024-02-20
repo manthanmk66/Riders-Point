@@ -18,7 +18,7 @@ public interface LoginService extends UserDetailsService{
 
 	RpDetails addRider(RpDetails rpdetalis);
 	
-	UserDetails getUserByUserName(String username);
+	RpDetails getUserByUserName(String username);
 	
 	Login addUser(Login userInfo);
 

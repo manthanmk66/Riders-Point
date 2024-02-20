@@ -60,9 +60,8 @@ public class LoginServiceImpl implements LoginService {
 		return rp_details_dao.save(rpdetalis);
 	}
 	@Override
-	public UserDetails getUserByUserName(String username) {
-	System.out.println(username);
-		return new UserInfoDetails(pdao.getUser(username));
+	public RpDetails getUserByUserName(String username) {
+		return pdao.getUser(username).getId();
 	}
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

@@ -16,16 +16,43 @@ public class UserInfoDetails implements UserDetails {
 
 	private String name;
 	private String password;
+	private Integer rpid;
 	private List<GrantedAuthority> authorities;
 
 	public UserInfoDetails(Login userInfo) {
 		name = userInfo.getUsername();
 		password = userInfo.getPassword();
-
+		rpid= userInfo.getId().getId();
 		authorities = Arrays.stream(((userInfo.getRoles() != null) ? userInfo.getRoles() : "").split(","))
 				.map(SimpleGrantedAuthority::new).collect(Collectors.toList());
 
 	}
+	
+	
+
+	public String getName() {
+		return name;
+	}
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
+	public Integer getRpid() {
+		return rpid;
+	}
+
+
+
+	public void setRpid(Integer rpid) {
+		this.rpid = rpid;
+	}
+
+
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -64,7 +91,10 @@ public class UserInfoDetails implements UserDetails {
 
 	@Override
 	public String toString() {
-		return "UserInfoDetails [name=" + name + ", password=" + password + ", authorities=" + authorities + "]";
+		return "UserInfoDetails [name=" + name + ", password=" + password + ", rpid=" + rpid + ", authorities="
+				+ authorities + "]";
 	}
+
+	
 	
 }

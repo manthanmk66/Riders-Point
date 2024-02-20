@@ -8,6 +8,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -108,7 +109,9 @@ public class LoginController {
 	}
 	
 	@GetMapping("/profile")
-	public UserInfoDetails getProfile(){
-		return((UserInfoDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+	public RpDetails getProfile(){
+		UserInfoDetails uDetails=((UserInfoDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+		return serv.getUserByUserName(uDetails.getUsername());
+		
 	}
 }
