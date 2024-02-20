@@ -172,24 +172,26 @@
 
 //export default Navbar;
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { CgMenu, CgCloseR } from "react-icons/cg";
 import logos from "../Assets/logos.png";
+import { useCurrentUser } from "../userContext";
 
 
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const { currentUser } = useCurrentUser();
 
   return (
-    <nav className="pt-3 shadow lg:px-10 flex justify-between items-center z-50 font-roboto text-black font-semibold ">
+    <nav className="pt-3 shadow flex justify-between items-center z-50 font-roboto text-black font-semibold ">
       {/* Logo */}
-      <NavLink to="/" className="pt-14" style={{ paddingRight: "80rem"}}>
-        <img src={logos} width={250} height={250} alt="logo" />
+      <NavLink to="/" >
+        <img src={logos} style={{ height: "100px" }} alt="logo" />
       </NavLink>
 
       {/* Menu Items */}
-      <ul className={`lg:flex ${openMenu ? "block" : "hidden"} lg:items-center lg:justify-end gap-6 text-3xl`}>
+      <ul className={`lg:flex ${openMenu ? "block" : "hidden"} lg:items-center lg:justify-end gap-6 text-3xl mr-5`}>
         <li className="mb-4 lg:mb-0">
           <NavLink
             className="text-gray-800 hover:text-gray-600 font-inter transition duration-300 ease-in-out"
@@ -236,14 +238,31 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li className="mb-4 lg:mb-0">
-          <NavLink
-             className="bg-blue-500  font-interbg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded transition duration-300 ease-in-out"
-          
-            onClick={() => setOpenMenu(false)}
-            to="/register"
-          >
-            Signup
-          </NavLink>
+          {currentUser ?
+
+            <NavLink
+              className="bg-blue-500  font-interbg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded transition duration-300 ease-in-out"
+
+              onClick={() => {
+                setOpenMenu(false);
+                //we can call api to login else simply remove token from storage
+                localStorage.removeItem("token");
+                window.location.href = "/login";
+              }}
+
+            >
+              Logout
+            </NavLink>
+            :
+            <NavLink
+              className="bg-blue-500  font-interbg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded transition duration-300 ease-in-out"
+
+              onClick={() => setOpenMenu(false)}
+              to="/register"
+            >
+              Signup
+            </NavLink>
+          }
         </li>
       </ul>
 

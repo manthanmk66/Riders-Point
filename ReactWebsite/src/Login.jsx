@@ -1,40 +1,46 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import base_url from './api/bootapi';
+import { useCurrentUser } from './userContext';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const { fetchCurrentUser } = useCurrentUser();
+  const navigate = useNavigate();
+
   const handleLogin = (event) => {
     event.preventDefault();
     console.log(email, password);
-    const body={
-      "username":email,
-      "password":password
+    const body = {
+      "username": email,
+      "password": password
     };
-      
-    axios.post(base_url+'/auth/login',body).then(result=>{
+
+    axios.post(base_url + '/auth/login', body).then(result => {
       console.log(result.data);
-      localStorage.setItem("token",result.data.token)
+      localStorage.setItem("token", result.data.token);
+      fetchCurrentUser();
+      navigate("/rides");
       toast.success('Login Successfully', {
         position: 'top-center'
       });
-    }).catch(e=>{
+    }).catch(e => {
       console.error('Login failed:', e);
       toast.error('Invalid email or password', {
         position: 'top-center'
       });
-    })
-      
+    });
+
   };
-  
+
 
   return (
     <div className="h-screen flex justify-center items-center text-2xl">
-      <ToastContainer />
       <div className="flex justify-center py-10 items-center bg-white">
         <form className="bg-white">
           <h1 className="text-gray-800 font-bold text-3xl mb-1">Hello Again!</h1>
@@ -57,6 +63,6 @@ const Login = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Login;

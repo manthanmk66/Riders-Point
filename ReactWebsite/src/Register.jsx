@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -21,19 +21,20 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-  
-    axios.post(base_url+'/auth/register',formData).then(result=>{
+
+    axios.post(base_url + '/auth/register', formData).then(result => {
       console.log(result.data);
-      localStorage.setItem("token",result.data.token)
+      localStorage.setItem("token", result.data.token);
       toast.success('Account Registration successful! Please login.', {
         position: 'top-center'
       });
-    }).catch(e=>{
+      navigate('/login')
+    }).catch(e => {
       console.error('failed:', e);
       toast.error('Registration failed. Please try again later.', {
         position: 'top-center'
       });
-    })
+    });
   };
 
   const handleChange = (e) => {
@@ -46,7 +47,7 @@ const Register = () => {
 
   return (
     <div className="container mx-auto p-8 text-2xl">
-      <ToastContainer />
+
       <form className="max-w-lg mx-auto mt-24 mb-32" onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="name" className="block text-gray-700 font-bold mb-2">Name</label>
@@ -140,21 +141,21 @@ const Register = () => {
             </label>
           </div>
         </div>
-        <div  className="flex gap-8 ">
-        <button
-          type="submit"
-          className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        >
-          Register
-        </button>
-        <button
+        <div className="flex gap-8 ">
+          <button
+            type="submit"
+            className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            Register
+          </button>
+          <button
             type="button"
             onClick={() => navigate('/login')}
             className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           >
             Already have an account? Login
           </button>
-          </div>
+        </div>
       </form>
     </div>
   );
