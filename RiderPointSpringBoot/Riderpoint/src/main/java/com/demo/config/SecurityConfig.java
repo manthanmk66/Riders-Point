@@ -40,17 +40,9 @@ public class SecurityConfig {
 	    @Bean
 	    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception { 
 	        return http.csrf().disable() 
-<<<<<<< HEAD
 	                .authorizeHttpRequests().antMatchers("/auth/login","/auth/register").permitAll().and() 
 	                .authorizeHttpRequests().antMatchers(HttpMethod.OPTIONS,"/**").permitAll().and()
 	                .authorizeHttpRequests().antMatchers("/**").authenticated().and() 
-=======
-	                .authorizeHttpRequests() 
-	                .antMatchers("/auth/login","/auth/register","/Rider/addRiderRoute","/pillion/**").permitAll() 
-	                .and() 
-	                .authorizeHttpRequests().antMatchers("/**").authenticated()  
-	                .and() 
->>>>>>> 0a325a3568ab47e66c93239589d4b2be72d5b7b1
 	                .sessionManagement() 
 	                .sessionCreationPolicy(SessionCreationPolicy.STATELESS) 
 	                .and() 

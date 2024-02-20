@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-<<<<<<< HEAD
 import com.demo.Dto.AddRideRouteResponse;
 import com.demo.Dto.BaseResponse;
 import com.demo.Dto.JoinAsPillionRequest;
@@ -24,12 +23,6 @@ import com.demo.Dto.JoinAsRiderRequest;
 import com.demo.Dto.Rider_route_details_Dto;
 import com.demo.Dto.Rider_status_Dto;
 import com.demo.Dto.RpDetailDTO;
-=======
-import com.demo.Dto.Rider_route_details_Dto;
-import com.demo.Dto.Rider_status_Dto;
-import com.demo.Dto.RpDetailDTO;
-import com.demo.Model.Login;
->>>>>>> 0a325a3568ab47e66c93239589d4b2be72d5b7b1
 import com.demo.Model.Rider_Status;
 import com.demo.Model.Rider_route_details;
 import com.demo.Model.RpDetails;
@@ -149,40 +142,22 @@ public class RiderController {
 
 	// All ID operation
 	@GetMapping("/getRiderByid/{id}")
-<<<<<<< HEAD
 	public RpDetailDTO getRiderbyid(@PathVariable int id) {
 		System.out.println("asdfa");
 		return serv.getRiderbyid(id);
 
-=======
-	public RpDetailDTO getRiderbyid(@PathVariable int id){
-		System.out.println("asdfa");
-		return serv.getRiderbyid(id);
-		
->>>>>>> 0a325a3568ab47e66c93239589d4b2be72d5b7b1
 	}
 
 	@GetMapping("/getStatusByid/{status_id}")
-<<<<<<< HEAD
 	public Rider_Status getStatusbyid(@PathVariable int status_id) {
-=======
-	public Rider_status_Dto getStatusbyid(@PathVariable int status_id){
->>>>>>> 0a325a3568ab47e66c93239589d4b2be72d5b7b1
 		return serv.getStatusbyid(status_id);
 	}
 
 	@GetMapping("/getRouteByid/{route_id}")
-<<<<<<< HEAD
 	public Rider_route_details_Dto getRoutebyid(@PathVariable String route_id) {
 		return serv.getRoutebyid(route_id);
 	}
 
-=======
-	public Rider_route_details_Dto getRoutebyid(@PathVariable String route_id){
-		return serv.getRoutebyid(route_id);
-	}	
-	
->>>>>>> 0a325a3568ab47e66c93239589d4b2be72d5b7b1
 	// All Update operation
 	@PutMapping("/editRider")
 	public String updaterider(@RequestBody RpDetails rider) {
@@ -215,20 +190,13 @@ public class RiderController {
 			return "Failed to add plz re enter";
 		}
 	}
-<<<<<<< HEAD
 
 	@DeleteMapping("/deleteRiderByid/id/{id}")
 	public String deleteRiderbyid(@PathVariable String id) {
-=======
-	
-	@DeleteMapping("/deleteRiderByid/id/{id}")
-	public String deleteRiderbyid(@PathVariable String id){
->>>>>>> 0a325a3568ab47e66c93239589d4b2be72d5b7b1
 		System.out.println("sdf");
 		serv.deleteRiderbyid(id);
 		return "Deleted...";
 	}
-<<<<<<< HEAD
 
 	@DeleteMapping("/deleteStatusByid/status_id/{status_id}")
 	public String deleteStatusbyid(@PathVariable String status_id) {
@@ -238,15 +206,6 @@ public class RiderController {
 
 	@DeleteMapping("/deleteRiderByid/route_id/{route_id}")
 	public String deleteRiderRoute(@PathVariable String route_id) {
-=======
-	@DeleteMapping("/deleteStatusByid/status_id/{status_id}")
-	public String deleteStatusbyid(@PathVariable String status_id){
-		serv.deleteStatusbyid(status_id);
-		return "Deleted...";
-	}
-	@DeleteMapping("/deleteRiderByid/route_id/{route_id}")
-	public String deleteRiderRoute(@PathVariable String route_id){
->>>>>>> 0a325a3568ab47e66c93239589d4b2be72d5b7b1
 		serv.deleteRiderRoute(route_id);
 		return "Deleted...";
 	}
