@@ -6,12 +6,27 @@
 		    "mode":"Pillion"
 		}
 
+
+{           "id":1,
+		    "name":"manthan",
+		    "mobile":"4442355",
+		    "address":"pune",
+		"username":"manthan",
+            "password":"manthan",
+		    "alert":"no",
+		    "mode":"Pillion"
+}
+
 //for the rider status hybernate JSON data insert and "id" is in parent class
 
 { "status_id":2,
     "rp_id":{"id":2},
     "bike":"Kawasaki Ninja",
+<<<<<<< HEAD
     "expense":3000,
+=======
+    "expense":3000
+>>>>>>> 118e8303e502f7b2446e2c136d429567bc15543a
     "license":"mh10",
     "wantpillion":"no"
 }
