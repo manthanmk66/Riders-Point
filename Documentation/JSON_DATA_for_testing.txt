@@ -11,8 +11,9 @@
 { "status_id":2,
     "rp_id":{"id":2},
     "bike":"Kawasaki Ninja",
-    "expense":3000
-    
+    "expense":3000,
+    "license":"mh10",
+    "wantpillion":"no"
 }
 // login table
 insert into Login(password,username,rp_id) values("manthan","manthan",2);
@@ -53,4 +54,11 @@ insert into Login(password,username,rp_id) values("manthan","manthan",2);
     "description":"Lets enjoy buddies!"
 >>>>>>> a9d403082b12ef3ae8e7976249cb6cbc423e75f7
     
+}
+
+
+
+{
+   "rp_id":{"id":2},
+   "suggestion":"I injoy rider"
 }

@@ -1,19 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Route, Navigate } from 'react-router-dom';
+import { useCurrentUser } from './userContext';
 // import {isLoggedIn} from auth
 // import { Navigate, Outlet } from 'react-router-dom';
 
-const Privateroute = () => {
-  
-  return (
-    <div>   
-      {/* {isLoggedIn() ? (
-        <Outlet />
-      ) : (
-        <Navigate to="/login" />
-      )} */}
-    </div>
-  ); 
-}
+const Privateroute = ({ children }) => {
+
+  let { currentUser } = useCurrentUser();
+  return (currentUser
+    ? < >{children}</>
+    : <Navigate to={"/login"}/>
+
+  );
+};
 
 export default Privateroute;
 

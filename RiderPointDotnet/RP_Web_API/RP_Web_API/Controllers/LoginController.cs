@@ -4,8 +4,9 @@ using BLL;
 
 namespace RP_Web_API.Controllers
 {
+    // [EnableCors(origins: "*", headers: "*", methods: "*")]
     [ApiController]
-    [Route("test/[action]")]
+    [Route("login/")]
     public class LoginController : ControllerBase
     {
         private readonly ILogger<LoginController> _logger;
@@ -15,7 +16,7 @@ namespace RP_Web_API.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "Login")]
+        [HttpGet("Getlogin",Name = "Login")]
         public IEnumerable<Login> Get()
         {
             List<Login> lst=BLLservice.GetAlldetails();

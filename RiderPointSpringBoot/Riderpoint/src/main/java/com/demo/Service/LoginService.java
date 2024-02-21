@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 
 import com.demo.Model.Login;
 import com.demo.Model.RpDetails;
+import com.demo.Model.Suggestion_table;
 
 
 
@@ -18,9 +19,13 @@ public interface LoginService extends UserDetailsService{
 
 	RpDetails addRider(RpDetails rpdetalis);
 	
-	UserDetails getUserByUserName(String username);
+	RpDetails getUserByUserName(String username);
 	
 	Login addUser(Login userInfo);
 
 	Login addLogDetails(Login login);
+	
+	Suggestion_table addSuggestion(Suggestion_table rpdetalis);
+
+	List<Suggestion_table> getAllSuggestion();
 }

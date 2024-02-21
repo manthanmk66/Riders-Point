@@ -1,11 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
+// using System.Web.Http.Cors;
+
 using model;
+using model.dtos;
 using BLL;
 
 namespace RP_Web_API.Controllers
 {
+	// [EnableCors(origins: "*", headers: "*", methods: "*")]
     [ApiController]
-    [Route("Rider/[action]")]
+    [Route("Rider/")]
     public class RiderController : ControllerBase
     {
         private readonly ILogger<RiderController> _logger;
@@ -15,28 +19,38 @@ namespace RP_Web_API.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetRider")]
+        [HttpGet("Getall",Name = "GetRider")]
         public IEnumerable<rp_details> Getallrriders()
         {
             List<rp_details> lst=RiderService.GetAllriders();
             return lst; 
         }
-		[HttpGet(Name = "GetRider")]
-        public IEnumerable<rp_details> addrp(rp_details details)
+		[HttpPost("addData",Name = "adduser")]
+        public string addrp([FromForm]string name,[FromForm]string mobile_no,[FromForm]string address,[FromForm]string alert,[FromForm]string mode)
         {
-            List<rp_details> lst=RiderService.addRp(details);
-            return lst; 
+			rp_details rp=new rp_details(0,name,mobile_no,address,alert,mode);
+			Console.WriteLine("step in con");
+            bool lst=RiderService.addRp(rp) ;
+				if(lst!=null)
+				{
+					return " user added";
+				}
+				else
+				{
+					return "Failed to add plz re enter";
+				}
+            
         }
 
-        [HttpPost(Name ="addRiderStatus")]
-        public IEnumerable<string> addStatus(Status_rider rider){
+        [HttpPost("addStatus",Name ="addRiderStatus")]
+        public string addStatus([FromBody]Status_riderDTO rider){
             // string bike="kawasaki";
-			Console.WriteLine(rider.Bike);
+			// Console.WriteLine(rider.Bike);
              bool s= RiderService.addStatus(rider);
 			return s?"Status added":"reenter please";
         }
-	[HttpPost(Name="addRiderRoute")]
-	public IEnumerable<string> addRiderRoute(Rider_route_details route){
+	[HttpPost("addRiderRoute",Name="addRiderRoute")]
+	public string addRiderRoute([FromBody]Rider_route_detailsDTO route){
 		// here i changed class Rider_route_details attribute start_time and end_time to string because it gives error
 		bool s=RiderService.addRiderRoute(route);
 		if(s!=null)
@@ -50,35 +64,35 @@ namespace RP_Web_API.Controllers
 	}
 	
 	
-	[HttpGet(Name="Byroute")]
-	public IEnumerable<List<Rider_route_details>> getbyroute(string start,string end){
-		return RiderService.getbyroute(start,end);
+	[HttpGet("byroute",Name="Byroute")]
+	public List<Rider_route_details> getbyroute([FromBody] RouteReqModel route){
+		return RiderService.getbyroute(route.Start,route.End);
 	}
 	
 	
-	// // All ID operation
-	[@HttpGet(Name="getRiderByid/{id}")]
-	public IEnumerable<RpDetails> getRiderbyid(int id){
-		//post man ---->select-->form data
-		return RiderService.getRiderbyid(id);
+	// // // All ID operation
+	[HttpGet("getRiderByid/{id}",Name="getRiderByid/{id}")]
+	public IEnumerable<rp_details> getRiderbyid([FromForm]int id){
+
+		return RiderService.getRiderbyid(id) as IEnumerable<rp_details>;
 	}
 
-	[@HttpGet(Name="getStatusByid/{id}")]
-	public IEnumerable<Rider_Status> getStatusbyid(int id){
-		//post man ---->select-->form data
-		return RiderService.getStatusbyid(id);
+	[HttpGet("getStatusByid/{status_id}",Name="getStatusByid/{id}")]
+	public IEnumerable<Status_rider> getStatusbyid([FromForm]int status_id){
+		IEnumerable<Status_rider> s=RiderService.getStatusbyid(status_id) as IEnumerable<Status_rider>;
+		return s;
 	}
-	[@HttpGet(Name="getRouteByid/{id}")]
-	public IEnumerable<Rider_route_details> getRoutebyid(int id){
-		//post man ---->select-->form data
-		return RiderService.getRoutebyid(id);
+	[HttpGet("getRouteByid/{route_id}",Name="getRouteByid/{id}")]
+	public IEnumerable<Rider_route_details> getRoutebyid([FromForm]int route_id){
+	
+		return RiderService.getRoutebyid(route_id) as IEnumerable<Rider_route_details>;
 	}	
 	
 	// // All Update operation
-	[HttpPut(Name="editRider")]
-	public IEnumerable<String> updaterider(@RequestBody RpDetails rider){
+	[HttpPut("editRider",Name="editRider")]
+	public string updaterider([FromBody]rp_detailsDTO rider){
 		
-		bool s=RiderService.updateRider(rider);
+		bool s=RiderService.updaterider(rider);
 		if(s!=null)
 		{
 			return "Status added";
@@ -89,8 +103,8 @@ namespace RP_Web_API.Controllers
 		}
 	}
 	
-	[HttpPut(Name="editStatus")]
-	public IEnumerable<String> editStatus(@RequestBody Rider_Status rsstatus){
+	[HttpPut("editStatus",Name="editStatus")]
+	public string editStatus([FromBody] Status_riderDTO rsstatus){
 		
 		bool s=RiderService.editStatus(rsstatus);
 		if(s!=null)
@@ -104,8 +118,8 @@ namespace RP_Web_API.Controllers
 	}
 
 	
-	[HttpPut(Name="editRiderRoute")]
-	public IEnumerable<String> editRiderRoute(@RequestBody Rider_route_details rroute){
+	[HttpPut("editRiderRoute",Name="editRiderRoute")]
+	public string editRiderRoute([FromBody]Rider_route_detailsDTO rroute){
 		bool s=RiderService.editRiderRoute(rroute);
 		if(s!=null)
 		{
@@ -119,14 +133,14 @@ namespace RP_Web_API.Controllers
 	
 	
 	
-	// [HttpPost(Name="Alert")]
-	// public String sendAlert(@RequestParam String start,@RequestParam String end){
-	// 	//post man ---->select-->form data
+	// // [HttpPost(Name="Alert")]
+	// // public String sendAlert([FromBody] String start,[FromBody] String end){
+	// // 	//post man ---->select-->form data
 		
-	// 	List<Rider_route_details> lst=RiderService.getbyroute(start,end);
-	// 	// we have to write code for alert 
-	// 	return "Some one need help on your route";
-	// }
+	// // 	List<Rider_route_details> lst=RiderService.getbyroute(start,end);
+	// // 	// we have to write code for alert 
+	// // 	return "Some one need help on your route";
+	// // }
 	
 
 

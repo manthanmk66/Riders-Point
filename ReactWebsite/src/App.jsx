@@ -16,11 +16,15 @@ import Login from "./Login";
 import AddRide from "./pages/AddRide";
 import ScheduledRide from "./pages/ScheduledRide";
 import Rides from "./Rides";
-import Ride from "./pages/Ride";
 import RideStatus from "./pages/RideStatus";
 import MyScheduledRides from "./pages/MyScheduledRides";
 import axios from "axios";
 import { useEffect } from "react";
+import EditMyRide from "./pages/EditMyRide";
+import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import "../node_modules/bootstrap/dist/js/bootstrap.js";
+import { useCurrentUser } from "./userContext.js";
+import { ToastContainer } from "react-toastify";
 
 
 const App = () => {
@@ -44,60 +48,65 @@ const App = () => {
     },
     media: { mobile: "768px", tab: "998px" },
   };
-
-  useEffect(() => {
-    
-    axios.interceptors.request.use((config) => {
-      let token =localStorage.getItem("token");
-      if(token&& !config.url.includes("/auth")){
+  axios.interceptors.request.use((config) => {
+    let token = localStorage.getItem("token");
+    if (token && !config.url.includes("/auth/login") && !config.url.includes("/auth/register")) {
       config.headers.Authorization = `Bearer ${token}`;
-      }
+    }
 
-      return config;
+    return config;
   }, (error) => {
-      return Promise.reject(error);
+    return Promise.reject(error);
   });
-  }, [])
-  
+  useEffect(() => {
+    fetchCurrentUser();
+  }, []);
+
+  const { isLoading, fetchCurrentUser } = useCurrentUser();
 
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <GoToTop />
-     
-      <BrowserRouter>
-        <Header />
-        
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/rides" element={<Rides/>} />
-          <Route path="/service" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/addride" element={<AddRide/>} />
-          <Route path="/scheduledride" element={<ScheduledRide/>} />
-          <Route path="/myscheduledride" element={<MyScheduledRides/>} />
-          <Route path="/ridestatus" element={<RideStatus/>} />
-          {/* <Route path="/popup" element={<Popup/>} /> */}
+    isLoading ? <>Loading.....</> :
+      <ThemeProvider theme={theme}>
 
-          {/* <Route path="/user" element={<Privateroute />} >
+        <GlobalStyle />
+        <GoToTop />
+
+        <BrowserRouter>
+
+          <Header />
+          <div className="page-body">
+          <ToastContainer />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/rides" element={<Privateroute><Rides /></Privateroute>} />
+              <Route path="/service" element={<Services />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/addride" element={<Privateroute><AddRide /></Privateroute>} />
+              <Route path="/scheduledride" element={<Privateroute><ScheduledRide /></Privateroute>} />
+              <Route path="/myscheduledride" element={<Privateroute><MyScheduledRides /></Privateroute>} />
+              <Route path="/ridestatus" element={<RideStatus />} />
+              <Route path="/editmyride" element={<EditMyRide />} />
+              {/* <Route path="/popup" element={<Popup/>} /> */}
+
+              {/* <Route path="/user" element={<Privateroute />} >
 
 
           </Route> */}
 
-          <Route path="/events" element={<Events />} />
-          <Route path="/register" element={<Register />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/register" element={<Register />} />
 
 
-          <Route path="*" element={<Error />} />
+              <Route path="*" element={<Error />} />
 
 
-          
-        </Routes>
 
-        <Footer />
-      </BrowserRouter>
-    </ThemeProvider>
+            </Routes>
+          </div>
+          <Footer />
+        </BrowserRouter>
+      </ThemeProvider>
   );
 };
 

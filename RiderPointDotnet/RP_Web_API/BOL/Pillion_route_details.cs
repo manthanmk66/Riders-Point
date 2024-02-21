@@ -1,4 +1,4 @@
-namespace model;
+namespace model.dtos;
 
 public class Pillion_route_details{
     public int Route_id {

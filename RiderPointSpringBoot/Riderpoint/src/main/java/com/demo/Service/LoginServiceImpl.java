@@ -11,9 +11,11 @@ import org.springframework.stereotype.Service;
 
 import com.demo.Dao.Dao;
 import com.demo.Dao.RpDetailsDao;
+import com.demo.Dao.SuggestionDao;
 import com.demo.Dao.Dao;
 import com.demo.Model.Login;
 import com.demo.Model.RpDetails;
+import com.demo.Model.Suggestion_table;
 import com.demo.config.UserInfoDetails;
 
 @Service
@@ -22,6 +24,8 @@ public class LoginServiceImpl implements LoginService {
 	private Dao pdao;
 	@Autowired
 	private RpDetailsDao rp_details_dao;
+	@Autowired
+	private SuggestionDao rp_suggestion;
 	
 	@Autowired
     private PasswordEncoder encoder; 
@@ -60,9 +64,8 @@ public class LoginServiceImpl implements LoginService {
 		return rp_details_dao.save(rpdetalis);
 	}
 	@Override
-	public UserDetails getUserByUserName(String username) {
-	System.out.println(username);
-		return new UserInfoDetails(pdao.getUser(username));
+	public RpDetails getUserByUserName(String username) {
+		return pdao.getUser(username).getId();
 	}
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -72,11 +75,22 @@ public class LoginServiceImpl implements LoginService {
 		return ud;
 	}
 	
+	@Override
+	public Suggestion_table addSuggestion(Suggestion_table rp_sug) {
+		return rp_suggestion.save(rp_sug);
+	}
+	
 	public Login addUser(Login userInfo) { 
         userInfo.setPassword(encoder.encode(userInfo.getPassword())); 
         return pdao.save(userInfo); 
          
     }
+
+	@Override
+	public List<Suggestion_table> getAllSuggestion() {
+		
+		return rp_suggestion.findAll();
+	}
 
 	
 }

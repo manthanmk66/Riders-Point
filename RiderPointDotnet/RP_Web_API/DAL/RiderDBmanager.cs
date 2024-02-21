@@ -1,5 +1,5 @@
 using model;
-
+using model.dtos;
 using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 namespace dbmanagerUtil;
@@ -44,15 +44,16 @@ public static class RiderBDmanager {
     }
     
     
-    // add queary
+    
     public static bool addRp(rp_details rider)
     {
         bool flag=false;
         MySqlConnection connection=new MySqlConnection();
         connection.ConnectionString="server=localhost;port=3306;user=root;password=Atpadi@123;database=dotnetRiderpoint";
-        string query="insert into RpDetails() values(rider.Rp_id,rider.Name,rider.Mobile_no,rider.Address,rider.Alert,rider.Mode);
+        string query="insert into rp_details(Name,mobile_no,address,alert,mode) values('"+rider.Name+"','"+rider.Mobile_no+"','"+rider.Address+"','"+rider.Alert+"','"+rider.Mode+"')";
         try
         {
+            Console.WriteLine("step in db");
             MySqlCommand cmd=new MySqlCommand(query,connection);
             
             connection.Open();
@@ -66,7 +67,7 @@ public static class RiderBDmanager {
         }
        return flag;
     }
-     public static bool addstatus(Status_rider rider)
+     public static bool addstatus(Status_riderDTO rider)
     {
         bool state =false;
         MySqlConnection connection=new MySqlConnection();
@@ -89,7 +90,7 @@ public static class RiderBDmanager {
        return state;
     }
 
-     public static bool addRiderRoute(Rider_route_details rider)
+     public static bool addRiderRoute(Rider_route_detailsDTO rider)
     {
         bool state =false;
         MySqlConnection connection=new MySqlConnection();
@@ -147,7 +148,8 @@ public static class RiderBDmanager {
        return lst;
     }
 
-    //  public static bool addRiderRoute(Rider_route_details rider)
+//rewrite
+    //  public static bool addRiderRoute(Rider_route_detailsDTO rider)
     // {
     //     bool state =false;
     //     MySqlConnection connection=new MySqlConnection();
@@ -172,12 +174,12 @@ public static class RiderBDmanager {
     
     
 
-    public static RpDetails getRiderbyid(int id)
+    public static rp_details getRiderbyid(int id)
     {
         
         MySqlConnection connection=new MySqlConnection();
         connection.ConnectionString="server=localhost;port=3306;user=root;password=Atpadi@123;database=dotnetRiderpoint";
-        string query="select * from RpDetails where rp_id="+id;
+        string query="select * from rp_details where rp_id="+id;
         try
         {
             MySqlCommand cmd=new MySqlCommand(query,connection);
@@ -192,7 +194,7 @@ public static class RiderBDmanager {
                 string address=reader["address"].ToString();
                 string alert=reader["alert"].ToString();
                 string mode=reader["mode"].ToString();
-                RpDetails r=new RpDetails(rp_id,name,mobile_no,address,alert,mode);
+                rp_details r=new rp_details(rp_id,name,mobile_no,address,alert,mode);
             return r;
             }
         }
@@ -221,7 +223,7 @@ public static class RiderBDmanager {
                 int status_id=int.Parse(reader["status_id"].ToString());
                 int rp_id=int.Parse(reader["rp_id"].ToString());
                 string bike=reader["bike"].ToString();
-                string expense=reader["expense"].ToString();
+                double expense=Convert.ToDouble(reader["expense"].ToString());
                 // string wantpillion=reader["wantpillion"].ToString();
                 // string alert=reader["alert"].ToString();
                 
@@ -271,12 +273,12 @@ public static class RiderBDmanager {
        return null;
     }
 
-    public static bool updaterider(rp_details rider)
+    public static bool updaterider(rp_detailsDTO rider)
     {
         bool flag=false;
         MySqlConnection connection=new MySqlConnection();
         connection.ConnectionString="server=localhost;port=3306;user=root;password=Atpadi@123;database=dotnetRiderpoint";
-        string query="update from RpDetails set name='"+rider.Name+"',mobile_no='"+rider.Mobile_no+"',address='"+rider.Address+"',alert='"+rider.Alert+"',mode='"+rider.Mode+"' where rp_id="+rider.Rp_id;
+        string query="update from rp_details set name='"+rider.Name+"',mobile_no='"+rider.Mobile_no+"',address='"+rider.Address+"',alert='"+rider.Alert+"',mode='"+rider.Mode+"' where rp_id="+rider.Rp_id;
         try
         {
             MySqlCommand cmd=new MySqlCommand(query,connection);
@@ -292,28 +294,28 @@ public static class RiderBDmanager {
         }
        return flag;
     }
-    public static bool updaterider(rp_details rider)
-    {
-        bool flag=false;
-        MySqlConnection connection=new MySqlConnection();
-        connection.ConnectionString="server=localhost;port=3306;user=root;password=Atpadi@123;database=dotnetRiderpoint";
-        string query="update from RpDetails set name='"+rider.Name+"',mobile_no='"+rider.Mobile_no+"',address='"+rider.Address+"',alert='"+rider.Alert+"',mode='"+rider.Mode+"' where rp_id="+rider.Rp_id;
-        try
-        {
-            MySqlCommand cmd=new MySqlCommand(query,connection);
+    // public static bool updaterider(rp_details rider)
+    // {
+    //     bool flag=false;
+    //     MySqlConnection connection=new MySqlConnection();
+    //     connection.ConnectionString="server=localhost;port=3306;user=root;password=Atpadi@123;database=dotnetRiderpoint";
+    //     string query="update from rp_details set name='"+rider.Name+"',mobile_no='"+rider.Mobile_no+"',address='"+rider.Address+"',alert='"+rider.Alert+"',mode='"+rider.Mode+"' where rp_id="+rider.Rp_id;
+    //     try
+    //     {
+    //         MySqlCommand cmd=new MySqlCommand(query,connection);
             
-            connection.Open();
-            cmd.ExecuteNonQuery();
-            flag=true;
-        }
-        catch(Exception e)
-        {   Console.WriteLine(e.Message);       }
-        finally{
-            connection.Close();
-        }
-       return flag;
-    }
-     public static bool editStatus(Status_rider rider)
+    //         connection.Open();
+    //         cmd.ExecuteNonQuery();
+    //         flag=true;
+    //     }
+    //     catch(Exception e)
+    //     {   Console.WriteLine(e.Message);       }
+    //     finally{
+    //         connection.Close();
+    //     }
+    //    return flag;
+    // }
+     public static bool editStatus(Status_riderDTO rider)
     {
         bool state =false;
         MySqlConnection connection=new MySqlConnection();
@@ -335,12 +337,12 @@ public static class RiderBDmanager {
         }
        return state;
     }
-     public static bool editRiderRoute(Rider_route_details rider)
+     public static bool editRiderRoute(Rider_route_detailsDTO rider)
     {
         bool state =false;
         MySqlConnection connection=new MySqlConnection();
         connection.ConnectionString="server=localhost;port=3306;user=root;password=Atpadi@123;database=dotnetRiderpoint";
-        string query="update from Rider_route_details set status_id="+rider.Status_id+",start_point='"+rider.Start_point+"',end_point='"+rider.End_point+"',travel_date='"+rider.Travel_date+"',start_time='"+rider.Start_time+"',end_time='"+rider.End_time+"',description='"+rider.Description+"')";
+        string query="update from Rider_route_details set status_id="+rider.Status_id+",start_point='"+rider.Start_point+"',end_point='"+rider.End_point+"',travel_date='"+rider.Travel_date+"',start_time='"+rider.Start_time+"',end_time='"+rider.End_time+"',description='"+rider.Description+"') where route_id="+rider.Route_id;
         
         try
         {

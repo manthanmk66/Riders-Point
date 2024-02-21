@@ -17,6 +17,8 @@ public interface Rider_status_dao extends JpaRepository<Rider_Status, Integer> {
 //	@Query(value="select * from Rider_Status where mode='rider'",nativeQuery = true)
 //	List<Rider_Status> addStatus();
 
+	@Query(value="select * from rider_status where rp_id=:rp_id",nativeQuery = true)
+	List<Rider_Status> getByRpId(int rp_id);
 	
 
 }

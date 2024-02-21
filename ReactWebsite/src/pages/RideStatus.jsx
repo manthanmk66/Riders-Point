@@ -9,7 +9,9 @@ const RideStatus = () => {
   const [ridestatus, setRidestatus] = useState({
     bike: '',
     expense: '',
-    Licence: '',
+    licence: '',
+    wantPillion:'',
+    rp_id:''
   });
   const navigate = useNavigate();
 
@@ -21,7 +23,7 @@ const RideStatus = () => {
     navigate("/addride");
 
     // Creating function to post data on server
-    axios.post(base_url + 'auth/addStatus', ridestatus)
+    axios.post(base_url + '/Rider/addStatus', ridestatus)
     // axios.post(`${base_url}ride/addStatus`, ridestatus)
 
       .then(result => {
@@ -44,6 +46,15 @@ const RideStatus = () => {
     <div className="container mx-auto p-96 text-2xl flex-row font-roboto">
       <ToastContainer /> 
       <form className="max-w-lg mx-auto "onSubmit={handleSubmit} >
+
+      <div className="mb-4">
+          <label htmlFor="from" className="block text-gray-700  font-bold mb-2">RP ID</label>
+          <input type="text" id="rp_id" name="rp_id" onChange={(e) => {
+            setRidestatus({ ...ridestatus, rp_id: e.target.value });
+          }}
+            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-indigo-500" />
+        </div>
+        
         <div className="mb-4">
           <label htmlFor="from" className="block text-gray-700  font-bold mb-2">Bike Registration Number</label>
           <input type="text" id="bike" name="bike" onChange={(e) => {
@@ -51,6 +62,8 @@ const RideStatus = () => {
           }}
             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-indigo-500" />
         </div>
+
+
         <div className="mb-4">
           <label htmlFor="to" className="block text-gray-700 font-bold mb-2">Expense For Ride</label>
           <input type="text" id="expense" name="expense" onChange={(e) => {
@@ -58,13 +71,24 @@ const RideStatus = () => {
           }}
             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-indigo-500" />
         </div>
+
         <div className="mb-4">
           <label htmlFor="date" className="block text-gray-700 font-bold mb-2">Driving Licence</label>
-          <input type="text" id="Licence" name="Licence" onChange={(e) => {
-            setRidestatus({ ...ridestatus, Licence: e.target.value });
+          <input type="text" id="licence" name="licence" onChange={(e) => {
+            setRidestatus({ ...ridestatus, licence: e.target.value });
           }}
             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-indigo-500" />
         </div>
+
+        <div className="mb-4">
+          <label htmlFor="date" className="block text-gray-700 font-bold mb-2">Want Pillion</label>
+          <input type="text" id="wantPillion" name="wantPillion" onChange={(e) => {
+            setRidestatus({ ...ridestatus, wantPillion: e.target.value });
+          }}
+            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-indigo-500" />
+        </div>
+
+
         <button type="submit"  className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
           Add Ride
         </button>

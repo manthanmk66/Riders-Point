@@ -8,6 +8,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,6 +25,7 @@ import com.demo.Dto.RegisterResponse;
 import com.demo.Dto.RegsiterRequest;
 import com.demo.Model.Login;
 import com.demo.Model.RpDetails;
+import com.demo.Model.Suggestion_table;
 import com.demo.Service.JwtService;
 import com.demo.Service.LoginService;
 import com.demo.config.UserInfoDetails;
@@ -106,9 +108,26 @@ public class LoginController {
 			return "Failed to add please re enter";
 		}
 	}
+	@PostMapping("/addSuggetion")
+	public String suggetion(@RequestBody Suggestion_table rpsuggetion) {
+		Suggestion_table s = serv.addSuggestion(rpsuggetion);
+
+		if (s != null) {
+			return "Data added successfully";
+		} else {
+			return "Failed to add please re enter";
+		}
+	}
+	@GetMapping("/AllSuggetion")
+	public List<Suggestion_table> getSuggetion() {
+		List<Suggestion_table> s = serv.getAllSuggestion();
+		return s;
+	}
 	
 	@GetMapping("/profile")
-	public UserInfoDetails getProfile(){
-		return((UserInfoDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+	public RpDetails getProfile(){
+		UserInfoDetails uDetails=((UserInfoDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+		return serv.getUserByUserName(uDetails.getUsername());
+		
 	}
 }

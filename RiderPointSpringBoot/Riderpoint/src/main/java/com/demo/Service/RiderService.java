@@ -2,7 +2,6 @@ package com.demo.Service;
 
 import java.util.List;
 
-
 import com.demo.Dto.RpDetailDTO;
 import com.demo.Dto.Rider_route_details_Dto;
 import com.demo.Dto.Rider_status_Dto;
@@ -20,7 +19,6 @@ public interface RiderService {
 
 	Rider_route_details addRiderRoute(Rider_route_details rroute);
 
-
 	RpDetails updateRider(RpDetails rider);
 
 	Rider_Status editStatus(Rider_Status rsstatus);
@@ -29,7 +27,7 @@ public interface RiderService {
 
 	RpDetailDTO getRiderbyid(int id);
 
-	Rider_status_Dto getStatusbyid(int id);
+	Rider_Status getStatusbyid(int id);
 
 	Rider_route_details_Dto getRoutebyid(String id);
 
@@ -39,6 +37,15 @@ public interface RiderService {
 
 	void deleteRiderRoute(String route_id);
 
+	List<Rider_Status> getMyRides();
 	
+	List<Rider_Status> getAllRides();
 
+	Rider_Status joinAsRider(Rider_Status riderStatus);
+	
+	Rider_Status joinAsPillion(Rider_Status riderStatus);
+	void revokePillion(Rider_Status riderStatus);
+	void deleteRide(Rider_Status riderStatus);
+	
+	Rider_Status updateRouteDetails(Rider_route_details_Dto routeDetails);
 }
