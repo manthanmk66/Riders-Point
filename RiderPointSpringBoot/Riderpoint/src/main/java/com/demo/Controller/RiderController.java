@@ -65,8 +65,9 @@ public class RiderController {
 		Rider_Status status = new Rider_Status(rpDetails, rroute.getBike(), rroute.getExpense(), rroute.getLicense(),
 				rroute.getWantPillion(), null);
 
-		Rider_route_details rDetails = new Rider_route_details(Arrays.asList(status), rroute.getStart_point(),
-				rroute.getEnd_point(), rroute.getTravel_date(), rroute.getStart_time(), rroute.getEnd_time(), "");
+		Rider_route_details rDetails = new Rider_route_details(Arrays.asList(status), 
+				rroute.getStart_point(),
+				rroute.getEnd_point(), rroute.getTravel_date(), rroute.getStart_time(), rroute.getEnd_time(), rroute.getDescription());
 		status.setRouteDetails(rDetails);
 		rDetails.setCreatedBy(rpDetails);
 		Rider_route_details s = serv.addRiderRoute(rDetails);
