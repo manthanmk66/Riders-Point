@@ -1,7 +1,7 @@
 package com.demo.Model;
 
 import java.time.LocalTime;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;

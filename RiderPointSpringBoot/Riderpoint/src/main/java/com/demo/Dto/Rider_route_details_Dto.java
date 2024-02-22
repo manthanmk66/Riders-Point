@@ -1,7 +1,7 @@
 package com.demo.Dto;
 
 import java.time.LocalTime;
-import java.util.Date;
+import java.sql.Date;
 
 import com.demo.Model.Rider_Status;
 

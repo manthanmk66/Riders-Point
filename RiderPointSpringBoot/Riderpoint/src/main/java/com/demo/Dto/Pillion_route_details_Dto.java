@@ -1,6 +1,6 @@
 package com.demo.Dto;
 
-import java.util.Date;
+import java.sql.Date;
 
 
 import com.demo.Model.Pillion_Status;
