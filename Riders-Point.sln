@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RiderPointDotnet", "RiderPointDotnet", "{CEBC85C6-5933-45F4-A748-1B69A5827F6A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPwebapi", "RiderPointDotnet\RPwebapi\RPwebapi.csproj", "{6F2FE15E-24CF-4158-AC17-37F4EE967B52}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F2FE15E-24CF-4158-AC17-37F4EE967B52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F2FE15E-24CF-4158-AC17-37F4EE967B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F2FE15E-24CF-4158-AC17-37F4EE967B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F2FE15E-24CF-4158-AC17-37F4EE967B52}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6F2FE15E-24CF-4158-AC17-37F4EE967B52} = {CEBC85C6-5933-45F4-A748-1B69A5827F6A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5EA26145-7FD0-4617-A81F-DFEB410C5FC0}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "FfouEZJfC9jPWvSDEsXgHGAPdmxth8fPDfQM4krEtiM=",
+  "Source": "RP_Web_API",
+  "BasePath": "_content/RP_Web_API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

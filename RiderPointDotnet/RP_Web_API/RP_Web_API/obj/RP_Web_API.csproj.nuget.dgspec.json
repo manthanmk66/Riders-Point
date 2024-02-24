@@ -1,0 +1,257 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\RP_Web_API\\RP_Web_API.csproj": {}
+  },
+  "projects": {
+    "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\BLL\\BLL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\BLL\\BLL.csproj",
+        "projectName": "BLL",
+        "projectPath": "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\BLL\\BLL.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\BLL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\BOL\\BOL.csproj": {
+                "projectPath": "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\BOL\\BOL.csproj"
+              },
+              "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\DAL\\DAL.csproj": {
+                "projectPath": "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\DAL\\DAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\BOL\\BOL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\BOL\\BOL.csproj",
+        "projectName": "BOL",
+        "projectPath": "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\BOL\\BOL.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\BOL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\DAL\\DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\DAL\\DAL.csproj",
+        "projectName": "DAL",
+        "projectPath": "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\BOL\\BOL.csproj": {
+                "projectPath": "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\BOL\\BOL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\RP_Web_API\\RP_Web_API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\RP_Web_API\\RP_Web_API.csproj",
+        "projectName": "RP_Web_API",
+        "projectPath": "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\RP_Web_API\\RP_Web_API.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\RP_Web_API\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\BLL\\BLL.csproj": {
+                "projectPath": "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\BLL\\BLL.csproj"
+              },
+              "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\BOL\\BOL.csproj": {
+                "projectPath": "E:\\CDAC project\\Riders-Point\\RiderPointDotnet\\RP_Web_API\\BOL\\BOL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

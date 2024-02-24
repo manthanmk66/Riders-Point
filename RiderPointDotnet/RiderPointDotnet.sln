@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{6C514A51-881A-45B3-8AEF-CDDB3F80C82B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOL", "BOL\BOL.csproj", "{F293C1E4-FCF6-49B2-BBE1-416C9F2FEADD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{04E39876-6359-40CA-B79A-E2D6A8ACBAB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPwebapi", "RPwebapi\RPwebapi.csproj", "{2B153FE3-F236-44FC-B370-CAD5D9113424}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C514A51-881A-45B3-8AEF-CDDB3F80C82B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C514A51-881A-45B3-8AEF-CDDB3F80C82B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C514A51-881A-45B3-8AEF-CDDB3F80C82B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C514A51-881A-45B3-8AEF-CDDB3F80C82B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F293C1E4-FCF6-49B2-BBE1-416C9F2FEADD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F293C1E4-FCF6-49B2-BBE1-416C9F2FEADD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F293C1E4-FCF6-49B2-BBE1-416C9F2FEADD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F293C1E4-FCF6-49B2-BBE1-416C9F2FEADD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04E39876-6359-40CA-B79A-E2D6A8ACBAB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04E39876-6359-40CA-B79A-E2D6A8ACBAB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04E39876-6359-40CA-B79A-E2D6A8ACBAB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04E39876-6359-40CA-B79A-E2D6A8ACBAB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B153FE3-F236-44FC-B370-CAD5D9113424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B153FE3-F236-44FC-B370-CAD5D9113424}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B153FE3-F236-44FC-B370-CAD5D9113424}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B153FE3-F236-44FC-B370-CAD5D9113424}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

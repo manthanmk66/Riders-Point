@@ -1,0 +1,79 @@
+		{ "id":3,
+		    "name":"Raj",
+		    "mobile":"4442355",
+		    "address":"pune",
+		    "alert":"no",
+		    "mode":"Pillion"
+		}
+
+
+{           "id":1,
+		    "name":"manthan",
+		    "mobile":"4442355",
+		    "address":"pune",
+		"username":"manthan",
+            "password":"manthan",
+		    "alert":"no",
+		    "mode":"Pillion"
+}
+
+//for the rider status hybernate JSON data insert and "id" is in parent class
+
+{ "status_id":2,
+    "rp_id":{"id":2},
+    "bike":"Kawasaki Ninja",
+<<<<<<< HEAD
+    "expense":3000,
+=======
+    "expense":3000
+>>>>>>> 118e8303e502f7b2446e2c136d429567bc15543a
+    "license":"mh10",
+    "wantpillion":"no"
+}
+// login table
+insert into Login(password,username,rp_id) values("manthan","manthan",2);
+ insert into Login(loginid,password,username,rp_id) values(1,"rohit","rohit",1);
+
+
+//for Adding data in rider route details table check date and time
+
+{ "route_id":2,
+    "description":"Lets form a party",
+    "end_point":"lonavala",
+    "end_time":"22:00",
+    "start_point":"wakad",
+    "start_time":"10:00",
+    "travel_date":"2024-02-19",
+    "status_id":{"status_id":1}
+    
+}
+<<<<<<< HEAD
+{ 
+    "status_id":2,
+    "start_point":"wakad",
+    "end_point":"lonavala",
+    "travel_date":"2024-02-19",
+    "start_time":"10:00",
+    "end_time":"22:00",
+    "description":"Lets form a party"
+    
+=======
+
+//For adding data in Pillion Route Details
+
+{ "route_id":1  ,
+    "status_id":{"status_id":1},
+    "start_point":"Shivajinagar",
+    "end_point":"Imagica",
+    "travel_date":"2024-02-23",
+    "description":"Lets enjoy buddies!"
+>>>>>>> a9d403082b12ef3ae8e7976249cb6cbc423e75f7
+    
+}
+
+
+
+{
+   "rp_id":{"id":2},
+   "suggestion":"I injoy rider"
+}
