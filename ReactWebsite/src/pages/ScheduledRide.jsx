@@ -35,7 +35,7 @@ const ScheduledRide = () => {
   };
   return (
     <div className='font-serif justify-center mb-60 pb-2 pt-12 mt-2 '>
-      <h4 className='text-6xl flex justify-center text-black'>All Rides</h4>
+<h4 className='text-6xl flex justify-center text-black' style={{ fontFamily: "Montserrat", fontWeight: "621" }}>All Rides</h4>
       {
         ride.length > 0
           ? ride.map((item) => <Ride isRouteJoined={checkIsRouteJoined(item)} isRouteJoinedAsPillon={checkIsRouteJoinedAsPillon(item)} key={item.status_id} ride={item} reloadList={() => {

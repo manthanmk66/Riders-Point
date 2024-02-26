@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../styles/Button";
 import { useGlobalContext } from "../context";
-import logo from "../Assets/homebanner.jpg";
+import ibw from "../Assets/ibw.mp4";
 
 const HeroSection = () => {
   const dynamicWords = ["Explore", "Meetup", "Collab"];
@@ -25,24 +25,21 @@ const HeroSection = () => {
 
   return (
     <Wrapper>
-      <div className="container grid grid-two-column">
-        <div className="section-hero-data">
-          <p className="hero-top-data">Let's Ride Together</p>
-          <h1 className="hero-heading">
-            Riders <span style={{ color: "#8CB9BD" }}>{visibleLetters}</span>_
-          </h1>
-          <p className="hero-para">
-            Where Every Ride Becomes an Unforgettable Experience – Welcome to Riders Point.
-          </p>
-          <Button className="btn hireme-btn">
-            <NavLink to="/contact"> Explore </NavLink>
-          </Button>
-        </div>
-        {/* for image  */}
-        <div className="section-hero-image">
-          <picture>
-            <img src={logo} alt="hero image" className="hero-img " />
-          </picture>
+      <div className="section-hero-image relative h-screen">
+        <video className="absolute inset-0 w-full h-full object-cover z-0" src={ibw} autoPlay loop />
+        <div className="overlay absolute inset-0 flex flex-col justify-center items-center z-10">
+          <div className="section-hero-data text-center text-white">
+            <p className="hero-top-data text-semibold">Let's Ride Together</p>
+            <h1 className="hero-heading text-white">
+              Riders <span className="text-cyan-400">{visibleLetters}</span>_
+            </h1>
+            <p className="hero-para">
+              Where Every Ride Becomes an Unforgettable Experience – Welcome to Riders Point.
+            </p>
+            <Button className="btn hireme-btn">
+              <NavLink to="/rides"> Explore </NavLink>
+            </Button>
+          </div>
         </div>
       </div>
     </Wrapper>
@@ -50,13 +47,12 @@ const HeroSection = () => {
 };
 
 const Wrapper = styled.section`
-  padding: 9rem 0;
+  padding: 0 0 9rem; /* Add padding to the bottom */
+  margin-top: -3rem; /* Adjust the margin to move the hero section up */
+  background-color: rgba(0, 0, 0, 0.4);
   
-
   .section-hero-data {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 0 2rem;
   }
 
   .btn {
@@ -66,7 +62,6 @@ const Wrapper = styled.section`
   .hero-top-data {
     font-weight: 500;
     font-size: 1.5rem;
-    color: ${({ theme }) => theme.colors.helper};
     font-family: 'Montserrat', sans-serif;
   }
 
@@ -79,75 +74,11 @@ const Wrapper = styled.section`
     margin-top: 1.5rem;
     margin-bottom: 3.4rem;
     max-width: 60rem;
-  }
-
-  .section-hero-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  picture {
-    text-align: center;
-  }
-
-  .hero-img {
-    width: 1200px;
-    height: 420px;
-    max-width: 100%;
-  }
-
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    .grid {
-      gap: 7.2rem;
-    }
+    font-family: 'Montserrat', sans-serif;
   }
 `;
 
 export default HeroSection;
 
 
-// import React from "react";
-// import { NavLink } from "react-router-dom";
-// import { useGlobalContext } from "../context";
-// 
-// import logofinal from "../Assets/logos.png"
 
-// const HeroSection = () => {
-//   const { name, image } = useGlobalContext();
-
-//   return (
-//     <section className="py-36">
-//       <div className="container grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-//         <div className="text-center lg:text-left">
-//           <p className="text-xs uppercase font-medium text-gray-500">THIS IS ME</p>
-//           <h1 className="text-7xl font-bold text-black">Riders Point</h1>
-//           <p className="mt-6 mb-12 text-lg text-gray-600">
-//           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, culpa!
-//           </p>
-//           <NavLink to="/contact" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-//             Hire Me
-//           </NavLink>
-//         </div>
-
-//         {/* for image  */}
-//         <div className="text-center">
-//           <img src={image} alt="hero image" className="w-80" />
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-{/* <div className='relative'>
-
-<a href='/Home'><img src={logo} alt="Background" className="  w-full h-20px relative mt-[-300px]" /></a>
-<h1 className="text-3xl  text-white">Start Your Dream Adventure</h1>
-
-
-</div>
-
-);
-} */}
-
-// export default HeroSection;

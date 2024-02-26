@@ -25,21 +25,22 @@ import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.js";
 import { useCurrentUser } from "./userContext.js";
 import { ToastContainer } from "react-toastify";
+import HeroSection from "./components/HeroSection.jsx";
 
 
 const App = () => {
   const theme = {
     colors: {
       heading: "rgb(24 24 29)",
-      text: "rgb(24 24 29)",
-      white: "#fff",
-      black: " #000",
-      helper: "#8490ff",
-      bg: "rgb(249 249 255)",
-      footer_bg: "#0a1435",
-      btn: "rgb(98 84 243)",
-      border: "rgba(98, 84, 243, 0.5)",
-      hr: "#ffffff",
+      // text: "rgb(24 24 29)",
+      // white: "#fff",
+      // black: " #000",
+      // helper: "#8490ff",
+      // bg: "rgb(249 249 255)",
+      // footer_bg: "#0a1435",
+      // btn: "rgb(98 84 243)",
+      // border: "rgba(98, 84, 243, 0.5)",
+      // hr: "#ffffff",
       gradient:
         "linear-gradient(0deg, rgb(132 144 255) 0%, rgb(98 189 252) 100%)",
       shadow:
@@ -78,6 +79,10 @@ const App = () => {
           <ToastContainer />
             <Routes>
               <Route path="/" element={<Home />} />
+
+              {/* <Route path="/herosection" element={<HeroSection emergencyMessage={emergencyMessage} />} />
+               */}
+              
               <Route path="/rides" element={<Privateroute><Rides /></Privateroute>} />
               <Route path="/service" element={<Services />} />
               <Route path="/contact" element={<Contact />} />

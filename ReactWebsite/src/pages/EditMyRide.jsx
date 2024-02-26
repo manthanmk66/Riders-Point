@@ -11,7 +11,7 @@ const EditMyRide = () => {
     from: '',
     to: '',
     date: '',
-    starttime: '',
+    start_time: '',
     endtime: '',
     mobno: ''
   });
@@ -88,9 +88,9 @@ const EditMyRide = () => {
 
 
         <div className="mb-4">
-          <label htmlFor="starttime" className="block text-gray-700 font-bold mb-2">Starting Time</label>
-          <input type="time" id="starttime" name="starttime" onChange={(e)=>{
-            setRide({ ...ride,starttime:e.target.value});
+          <label htmlFor="start_time" className="block text-gray-700 font-bold mb-2">Starting Time</label>
+          <input type="time" id="start_time" name="start_time" onChange={(e)=>{
+            setRide({ ...ride,start_time:e.target.value});
           }} 
           
           className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-indigo-500" />

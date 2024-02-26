@@ -63,17 +63,23 @@ const Register = () => {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="username" className="block text-gray-700 font-bold mb-2">Username</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            value={formData.username}
-            onChange={(e) => setFormData({ ...formData, username: e.target.value })}
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-indigo-500"
-            required
-          />
-        </div>
+  <label htmlFor="username" className="block text-gray-700 font-bold mb-2">Username<span className="text-red-500">*</span></label>
+  <input
+    type="email"
+    id="username"
+    name="username"
+    value={formData.username}
+    onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-indigo-500"
+    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+    title="Please enter a valid email address with @ and ."
+    required
+  />
+</div>
+
+
+
+
 
         <div className="mb-4">
           <label htmlFor="password" className="block text-gray-700 font-bold mb-2">Password</label>
@@ -84,6 +90,8 @@ const Register = () => {
             value={formData.password}
             onChange={(e) => setFormData({ ...formData, password: e.target.value })}
             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-indigo-500"
+            pattern="^(?=.*[!@#$%^&*])(?=.*[a-zA-Z0-9])[a-zA-Z0-9!@#$%^&*]{8,}$"
+            title="Password must contain at least one special character (!@#$%^&*), and be at least 8 characters long"
             required
           />
         </div>
@@ -110,7 +118,10 @@ const Register = () => {
             value={formData.mobile}
             onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-indigo-500"
+            pattern="[0-9]{10}"
+            title="Mobile number must be exactly 10 digits without Country Code"
             required
+
           />
         </div>
 
@@ -125,6 +136,7 @@ const Register = () => {
                 value="rider"
                 checked={formData.mode === "rider"}
                 onChange={() => setFormData({ ...formData, mode: "rider" })}
+                required
               />
               Rider
             </label>
@@ -136,6 +148,7 @@ const Register = () => {
                 value="pillion"
                 checked={formData.mode === "pillion"}
                 onChange={() => setFormData({ ...formData, mode: "pillion" })}
+                required
               />
               Pillion
             </label>

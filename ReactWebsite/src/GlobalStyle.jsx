@@ -9,8 +9,8 @@ export const GlobalStyle = createGlobalStyle`
  }
 html {
   font-size: 62.5%;
-  /* scroll-behavior: smooth; */
-  /* 1rem = 10px */
+ scroll-behavior: smooth; 
+   1rem = 10px 
   overflow-x: hidden;
 }
 
@@ -57,8 +57,8 @@ h2 {
 }
 
 p {
-  color: ${({ theme }) => theme.colors.text};
-  opacity: .7;
+  //color: ${({ theme }) => theme.colors.text};
+   //opacity: .7;
   font-size: 1.65rem;
   line-height: 1.5;
   margin-top: 1rem;
@@ -107,21 +107,21 @@ li {
     color: ${({ theme }) => theme.colors.black};
     padding: 1.6rem 2.4rem;
     border: 1px solid ${({ theme }) => theme.colors.border};
-    text-transform: uppercase;
+    text-transform: Capatalize;
    box-shadow: ${({ theme }) => theme.colors.shadowSupport};
 }
     input[type="submit"]{
     max-width: 16rem;
     margin-top: 2rem;
-    background-color: ${({ theme }) => theme.colors.btn};
-    color: ${({ theme }) => theme.colors.white};
+
     padding: 1.4rem 2.2rem;
     border-style: solid;
     border-width: .1rem;
-    text-transform: uppercase;
+   
     font-size: 1.8rem;
     cursor: pointer;
     }
+    
 
 
 /* ===========================================

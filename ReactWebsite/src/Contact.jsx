@@ -2,6 +2,38 @@ import React from "react";
 import styled from "styled-components";
 
 const Contact = () => {
+
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "2a0ecd91-c734-4554-927b-5ce70b6c502b");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: json
+    }).then((res) => res.json());
+
+    if (res.success) {
+      console.log("Success", res);
+    }
+  };
+
+
+
+
+
+
+
+
   const Wrapper = styled.section`
     padding: 9rem 0 5rem 0;
 
@@ -36,11 +68,11 @@ const Contact = () => {
 
   return (
     <Wrapper>
-      <h2 className="common-heading font-inter">Feel Free to Contact us</h2>
+      <h2 className="common-heading font-inter font-bold" style={{ fontFamily: "Montserrat"}}>FEEL FREE TO CONTACT US</h2>
 
       <iframe
-  src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3026.0322536010217!2d73.8344!3d18.464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c14df5c70e0d%3A0x2d19689e09e2fced!2s${encodeURIComponent("Your Location")}!5e0!3m2!1sen!2sin!4v1658905192255!5m2!1sen!2sin`}
-  width="100%"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15126.28620995241!2d73.92422475000001!3d18.59334505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c14df5c70e0d%3A0x2d19689e09e2fced!2sPhoenix%20Mall%20Washrooms!5e0!3m2!1sen!2sin!4v1658905192255!5m2!1sen!2sin"
+        width="100%"
   height="450"
   style={{ border: 0 }}
   allowFullScreen=""
@@ -54,7 +86,8 @@ const Contact = () => {
       <div className="container">
         <div className="contact-form">
           <form
-            action="https://formspree.io/f/xgedgjkr"
+            onSubmit={onSubmit}
+           // action="https://formspree.io/f/xgedgjkr"
             method="POST"
             className="contact-inputs">
             <input
@@ -80,7 +113,7 @@ const Contact = () => {
               autoComplete="off"
               required></textarea>
 
-            <input type="submit" value="send" />
+            <input type="submit" className=" bg-sky-300" value="send" />
           </form>
         </div>
       </div>

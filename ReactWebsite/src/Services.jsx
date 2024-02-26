@@ -8,6 +8,9 @@ import one from "./Assets/1.jpg"
 import two from "./Assets/2.jpg";
 import three from "./Assets/3.jpg";
 import four from "./Assets/4.jpg";
+import five from "./Assets/11.jpg";
+import six from "./Assets/12.jpg";
+import seven from "./Assets/13.jpg"
 import ImageSlider from "./components/ImageSlider"
 
 // const Services = () => {
@@ -22,7 +25,10 @@ import ImageSlider from "./components/ImageSlider"
         { url: one, title: "beach" },
         { url: two, title: "boat" },
         { url: three, title: "forest" },
-        { url: four, title: "for" }
+        { url: four, title: "for" },
+        { url: five, title: "fr" },
+        { url: six, title: "fd" },
+        { url: seven, title: "fa" }
     ];
 
     const containerStyles = {
@@ -33,9 +39,9 @@ import ImageSlider from "./components/ImageSlider"
     
 
     return (
-        <div className="mt-60 mb-60">
+        <div className="mt-50 mb-56">
            
-            <h1 className="text-6xl text-richblack flex justify-center mt-4 mb-8 font-monster font-bold ">"PURE JOY ON TWO WHEELS"</h1>
+            <h1 className="text-6xl text-richblack flex justify-center mt-5 mb-12 font-monster font-bold " style={{ fontFamily: "Montserrat"}}>"PURE JOY ON TWO WHEELS"</h1>
           
             <div style={containerStyles}>
                 <ImageSlider slides={slides} parentWidth={600} />

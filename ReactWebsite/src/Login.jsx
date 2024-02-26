@@ -20,23 +20,31 @@ const Login = () => {
       "username": email,
       "password": password
     };
-
+  
     axios.post(base_url + '/auth/login', body).then(result => {
-      console.log(result.data);
-      localStorage.setItem("token", result.data.token);
-      fetchCurrentUser();
-      navigate("/rides");
       toast.success('Login Successfully', {
         position: 'top-center'
       });
+      console.log(result.data);
+      localStorage.setItem("token", result.data.token);
+
+      console.log("hi")
+      fetchCurrentUser();
+
+      
+      // Delay navigation for 1 second (adjust as needed)
+      setTimeout(() => {
+        navigate("/rides");
+      }, 3000);
+  
     }).catch(e => {
       console.error('Login failed:', e);
       toast.error('Invalid email or password', {
         position: 'top-center'
       });
     });
-
   };
+  
 
 
   return (
@@ -49,7 +57,7 @@ const Login = () => {
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
             </svg>
-            <input className="pl-2 outline-none border-none" type="text" placeholder="Email Address" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input type="email" className="pl-2 outline-none border-none"  placeholder="User name" value={email} onChange={(e) => setEmail(e.target.value)} />
           </div>
           <div className="flex items-center border-2 py-2 px-3 rounded-2xl">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
@@ -58,7 +66,7 @@ const Login = () => {
             <input className="pl-2 outline-none border-none" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
           </div>
           <button type="submit" onClick={handleLogin} className="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2">Login</button>
-          <span className="text-2xl ml-2 hover:text-blue-500 cursor-pointer">Forgot Password?</span>
+          {/* <span className="text-2xl ml-2 hover:text-blue-500 cursor-pointer">Forgot Password?</span> */}
         </form>
       </div>
     </div>
