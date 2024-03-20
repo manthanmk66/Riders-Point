@@ -28,6 +28,6 @@ RidersPoint is a communication platform designed and developed to facilitate gro
 - **Database:**
   - MySQL
  
-  - ## Contributing
+   ## Contributing
 
 Contributions are welcome! Please fork the repository and create a pull request for any improvements or feature additions.
